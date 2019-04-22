@@ -4,8 +4,8 @@
   "description": "A web app that has monuments and trails of the french heritage in Lewiston,ME USA",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js",
+    "start": "node index.js",
+    "server": "nodemon index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \" npm run client\" "
   },
