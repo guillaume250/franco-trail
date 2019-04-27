@@ -1,11 +1,20 @@
 {
-  "main.js": "/static/js/main.a5660b0e.chunk.js",
-  "main.js.map": "/static/js/main.a5660b0e.chunk.js.map",
+  "main.css": "/static/css/main.b91b82c6.chunk.css",
+  "main.js": "/static/js/main.d7c2a866.chunk.js",
+  "main.js.map": "/static/js/main.d7c2a866.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
   "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.28e4e8d4.chunk.js": "/static/js/2.28e4e8d4.chunk.js",
-  "static/js/2.28e4e8d4.chunk.js.map": "/static/js/2.28e4e8d4.chunk.js.map",
+  "static/js/2.5adc7d0d.chunk.js": "/static/js/2.5adc7d0d.chunk.js",
+  "static/js/2.5adc7d0d.chunk.js.map": "/static/js/2.5adc7d0d.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.a37acf65ea8be7872aa7c009ec310a9d.js": "/precache-manifest.a37acf65ea8be7872aa7c009ec310a9d.js",
-  "service-worker.js": "/service-worker.js"
+  "precache-manifest.37a0f1b7cef5de37c4ba65ffe6e86b8e.js": "/precache-manifest.37a0f1b7cef5de37c4ba65ffe6e86b8e.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.b91b82c6.chunk.css.map": "/static/css/main.b91b82c6.chunk.css.map",
+  "static/media/BasilicaInBlueCircleWEB.svg": "/static/media/BasilicaInBlueCircleWEB.90adf860.svg",
+  "static/media/FrancoCenterIconOneWEB.svg": "/static/media/FrancoCenterIconOneWEB.0ca49dd8.svg",
+  "static/media/MuseumLABlueCircleWEB.svg": "/static/media/MuseumLABlueCircleWEB.346db076.svg",
+  "static/media/PontPietonBlueCircleWEB.svg": "/static/media/PontPietonBlueCircleWEB.2829c8cb.svg",
+  "static/media/USMLACBlueCircleWEB.svg": "/static/media/USMLACBlueCircleWEB.2b19effb.svg",
+  "static/media/basilica.JPG": "/static/media/basilica.f1479caa.JPG",
+  "static/media/title.png": "/static/media/title.5bb8501b.png"
 }
