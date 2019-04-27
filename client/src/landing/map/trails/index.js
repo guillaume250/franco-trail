@@ -32,7 +32,7 @@ export function renderTrails(map, maps) {
     { lat: 44.09256, lng: -70.226066 },
     { lat: 44.092669, lng: -70.228334 },
     { lat: 44.09373, lng: -70.227995 },
-    { lat: 44.093561, lng: -70.225986 },
+    { lat: 44.093561, lng: -70.225986 }, //Elm St > Main St >
     { lat: 44.091899, lng: -70.226106 },
     { lat: 44.092279, lng: -70.225041 },
     { lat: 44.092951, lng: -70.223054 },
@@ -41,12 +41,58 @@ export function renderTrails(map, maps) {
     { lat: 44.093686, lng: -70.221187 },
     { lat: 44.093804, lng: -70.220853 },
     { lat: 44.091448, lng: -70.219387 },
-    { lat: 44.09149, lng: -70.219164 },
+    { lat: 44.09149, lng: -70.219164 }, //Franco Center
     { lat: 44.091448, lng: -70.219387 },
     { lat: 44.092778, lng: -70.220212 },
     { lat: 44.093732, lng: -70.217263 },
     { lat: 44.094757, lng: -70.217879 },
     { lat: 44.095226, lng: -70.2164 }
+  ];
+
+  //Walking Trail From the Great Falls to Little Canada
+  let trail4Routes = [
+    { lat: 44.100333, lng: -70.223048 },
+    { lat: 44.100385, lng: -70.223101 },
+    { lat: 44.100381, lng: -70.223229 },
+    { lat: 44.100422, lng: -70.223536 },
+    { lat: 44.100621, lng: -70.224044 },
+    { lat: 44.1006, lng: -70.224298 },
+    { lat: 44.100426, lng: -70.224594 },
+    { lat: 44.100295, lng: -70.224711 },
+    { lat: 44.100255, lng: -70.22471 },
+    { lat: 44.099465, lng: -70.22441 },
+    { lat: 44.099187, lng: -70.224306 },
+    { lat: 44.098981, lng: -70.224191 },
+    { lat: 44.098381, lng: -70.223963 },
+    { lat: 44.098113, lng: -70.223877 },
+    { lat: 44.09744, lng: -70.223928 },
+    { lat: 44.097296, lng: -70.223966 },
+    { lat: 44.097057, lng: -70.224215 },
+    { lat: 44.096781, lng: -70.22432 },
+    { lat: 44.096569, lng: -70.224276 },
+    { lat: 44.096409, lng: -70.22435 },
+    { lat: 44.096205, lng: -70.224594 },
+    { lat: 44.095355, lng: -70.224809 },
+    { lat: 44.095157, lng: -70.224769 },
+    { lat: 44.094789, lng: -70.224801 },
+    { lat: 44.094637, lng: -70.225025 },
+    { lat: 44.094467, lng: -70.225024 },
+    { lat: 44.09432, lng: -70.225032 },
+    { lat: 44.093842, lng: -70.225189 },
+    { lat: 44.0936, lng: -70.225313 },
+    { lat: 44.093448, lng: -70.225317 },
+    { lat: 44.093448, lng: -70.225317 },
+    { lat: 44.092537, lng: -70.225092 },
+    { lat: 44.092307, lng: -70.225019 },
+    { lat: 44.092304, lng: -70.224953 },
+    { lat: 44.092951, lng: -70.223054 },
+    { lat: 44.092996, lng: -70.222815 },
+    { lat: 44.093536, lng: -70.221157 },
+    { lat: 44.093686, lng: -70.221187 },
+    { lat: 44.093804, lng: -70.220853 },
+    { lat: 44.091448, lng: -70.219387 },
+    { lat: 44.090216, lng: -70.218593 }
+    //  { lat: 44.09149, lng: -70.219164 }
   ];
   const trail1 = new maps.Polyline({
     path: trail1Routes,
@@ -70,7 +116,15 @@ export function renderTrails(map, maps) {
     strokeOpacity: 0.5,
     strokeWeight: 8
   });
+  const trail4 = new maps.Polyline({
+    path: trail4Routes,
+    geodesic: true,
+    strokeColor: "dodgerblue",
+    strokeOpacity: 0.5,
+    strokeWeight: 8
+  });
   trail1.setMap(map);
   trail2.setMap(map);
   trail3.setMap(map);
+  trail4.setMap(map);
 }

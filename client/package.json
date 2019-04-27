@@ -7,6 +7,7 @@
     "@material-ui/icons": "^3.0.2",
     "@react-google-maps/api": "^1.2.3-alpha.5",
     "google-map-react": "^1.1.4",
+    "jquery": "^3.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",

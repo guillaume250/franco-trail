@@ -12,7 +12,7 @@ class App extends Component {
         <Header />
         <div style={styles.body}>
           <TrailMap />
-          {/*<Carousel /> */}
+          {/*<Carousel />*/}
         </div>
       </div>
     );

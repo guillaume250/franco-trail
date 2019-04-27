@@ -15,6 +15,7 @@ import Typography from "@material-ui/core/Typography";
 import basilica from "./basilica.JPG";
 import styles from "./styles";
 import stylesCSS from "./styles.css";
+import places from "../map/markers/places";
 
 class Carousel extends React.Component {
   state = { expanded: false };
@@ -22,6 +23,29 @@ class Carousel extends React.Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
+
+  componentDidMount() {
+    (function() {
+      ///Carousel Scroll horizontal on mousewheel move
+      var carousel = document.getElementById("scrollLeft");
+      function scrollHorizontally(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
+        carousel.scrollLeft -= delta * 40; // Multiplied by 40
+        carousel.scrollLeft -= delta * 40; // Multiplied by 40
+        e.preventDefault();
+      }
+      if (carousel.addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        carousel.addEventListener("mousewheel", scrollHorizontally, false);
+        // Firefox
+        carousel.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+      } else {
+        // IE 6/7/8
+        carousel.attachEvent("onmousewheel", scrollHorizontally);
+      }
+    })();
+  }
 
   render() {
     const { classes } = this.props;
@@ -32,25 +56,27 @@ class Carousel extends React.Component {
       slidesToScroll: 1
     };
     return (
-      <div className="scrolling-wrapper-flexbox">
-        <div className="card">
-          <Card className={classes.card}>
-            <CardMedia
-              className={classes.media}
-              image={basilica}
-              title="basilica"
-            />
-            <CardHeader
-              avatar={
-                <Avatar aria-label="Recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              title="Shrimp and Chorizo Paella"
-              subheader="September 14, 2016"
-            />
-          </Card>
-        </div>
+      <div id="scrollLeft" className="scrolling-wrapper-flexbox">
+        {places.map(place => (
+          <div className="card">
+            <Card className={classes.card}>
+              <CardMedia
+                className={classes.media}
+                image={basilica}
+                title={place.name}
+              />
+              <CardHeader
+                avatar={
+                  <Avatar aria-label={place.name} className={classes.avatar}>
+                    <img src={place.icon} />
+                  </Avatar>
+                }
+                title={place.name}
+                subheader={place.shortDesc}
+              />
+            </Card>
+          </div>
+        ))}
       </div>
     );
   }

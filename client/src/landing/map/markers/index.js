@@ -7,13 +7,16 @@ export function renderMarkers(map, maps) {
       position: new maps.LatLng(place.coordinates.lat, place.coordinates.lng),
       map,
       animation: maps.Animation.DROP,
-      title: place.name,
+      title: place.shortDesc,
       icon: place.icon
       //label: "A"
     });
 
     let i1 = new maps.InfoWindow({
-      content: place.shortDesc
+      content: place.name
+    });
+    let i2 = new maps.InfoWindow({
+      content: place.longDesc
     });
     m1.addListener("mouseover", function() {
       i1.open(map, m1);
@@ -24,8 +27,12 @@ export function renderMarkers(map, maps) {
 
     // for more Google Maps API Events see: https://developers.google.com/maps/documentation/javascript/events
     m1.addListener("click", function() {
+      if (i1 || i2) {
+        i1.close();
+        i2.close();
+      }
       console.log(place);
-      i1.open(map, m1);
+      i2.open(map, m1);
     });
   });
 }
