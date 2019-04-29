@@ -1,10 +1,9 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
-import TitleImage from "./images/title.png";
-import theme from "../../config/themes";
+import TitleImage from "../../resources/header_images/title.png";
+import theme from "../../config/themes_config";
 import styles from "./styles";
 import stylecss from "./stylecss.css";
 

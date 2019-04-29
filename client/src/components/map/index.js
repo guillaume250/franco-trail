@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
-import { center, config } from "./config";
+import { center, config } from "../../config/map_config";
 import { renderMarkers } from "./markers";
 import { renderTrails } from "./trails";
 import Paper from "@material-ui/core/Paper";

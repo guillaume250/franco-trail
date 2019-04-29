@@ -1,5 +1,5 @@
-import React from "react";
-import places from "./places";
+//import React from "react";
+import places from "../../../resources/places";
 
 export function renderMarkers(map, maps) {
   places.forEach(function(place) {

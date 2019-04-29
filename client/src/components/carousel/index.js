@@ -4,26 +4,29 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Slider from "react-slick";
-import HorizontalScroll from "react-scroll-horizontal";
 
 import Avatar from "@material-ui/core/Avatar";
-
-import Typography from "@material-ui/core/Typography";
-
-import basilica from "./basilica.JPG";
+import Popup from "../popup";
 import styles from "./styles";
 import stylesCSS from "./styles.css";
-import places from "../map/markers/places";
+import places from "../../resources/places";
 
 class Carousel extends React.Component {
-  state = { expanded: false };
+  constructor(props) {
+    super(props);
+    this.handleClose = this.handleClose.bind(this);
 
-  handleExpandClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }));
+    this.state = { open: false, selectedPlace: {} };
+  }
+
+  handleClick = (e, data) => {
+    this.setState({ selectedPlace: data });
+    this.setState({ open: true });
   };
-
+  handleClose = () => {
+    console.log("HOLA");
+    this.setState({ open: false });
+  };
   componentDidMount() {
     (function() {
       ///Carousel Scroll horizontal on mousewheel move
@@ -49,32 +52,37 @@ class Carousel extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const settings = {
-      dots: false,
-      infinite: false,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+
     return (
       <div id="scrollLeft" className="scrolling-wrapper-flexbox">
         {places.map(place => (
-          <div className="card">
-            <Card className={classes.card}>
+          <div key={place.key} className="card">
+            <Card
+              className={classes.card}
+              onClick={e => this.handleClick(e, place)}
+            >
               <CardMedia
                 className={classes.media}
-                image={basilica}
+                image={place.thumbnail}
                 title={place.name}
               />
               <CardHeader
                 avatar={
-                  <Avatar aria-label={place.name} className={classes.avatar}>
-                    <img src={place.icon} />
-                  </Avatar>
+                  <Avatar
+                    aria-label={place.name}
+                    className="imgAvatar"
+                    src={place.icon}
+                  />
                 }
                 title={place.name}
                 subheader={place.shortDesc}
               />
             </Card>
+            <Popup
+              open={this.state.open}
+              CloseIt={this.handleClose}
+              data={this.state.selectedPlace}
+            />
           </div>
         ))}
       </div>

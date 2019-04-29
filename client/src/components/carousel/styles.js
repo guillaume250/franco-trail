@@ -1,4 +1,4 @@
-import red from "@material-ui/core/colors/red";
+//import red from "@material-ui/core/colors/red";
 
 const styles = theme => ({
   media: {
@@ -7,9 +7,6 @@ const styles = theme => ({
   },
   actions: {
     display: "flex"
-  },
-  avatar: {
-    backgroundColor: red[500]
   }
 });
 export default styles;

@@ -1,6 +1,6 @@
 //This file contains the core configurations of the map
-import styles from "./styles/standard-1";
-import api from "../../config/api";
+import styles from "../resources/map/styles/standard-1";
+import api from "./api";
 
 export const center = {
   lat: 44.0960371,
@@ -13,8 +13,8 @@ export const config = {
   styles,
   mapStyle: {
     styles,
-    minZoom: 13, // 0 is the world map
-    maxZoom: 20
+    minZoom: 14.54, // 0 is the world map
+    maxZoom: 17.54
   },
   maxZoom: 20,
   mapContainer: { height: "50vh", width: "100%" }
