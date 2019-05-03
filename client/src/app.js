@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/header";
 import Carousel from "./components/carousel";
-import TrailMap from "./components/map";
+import Map from "./components/map";
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div>
         <Header />
         <div style={styles.body}>
-          <TrailMap />
+          <Map />
           <Carousel />
         </div>
       </div>

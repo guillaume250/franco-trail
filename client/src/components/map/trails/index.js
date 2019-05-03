@@ -95,31 +95,44 @@ export function renderTrails(map, maps) {
     //  { lat: 44.09149, lng: -70.219164 }
   ];
   const trail1 = new maps.Polyline({
-    path: trail1Routes,
-    trail2Routes,
-    geodesic: true,
-    strokeColor: "dodgerblue",
-    strokeOpacity: 0.5,
-    strokeWeight: 8
-  });
+      path: trail1Routes,
+      trail2Routes,
+      geodesic: true,
+      strokeColor: "red",
+      strokeOpacity: 0.5,
+      strokeWeight: 8
+    });
+  //   path: trail1Routes,
+  //   trail2Routes,
+  //   geodesic: true,
+  //   strokeOpacity: 0,
+  //   icons: [
+  //     {
+  //       icon: lineSymbol,
+  //       offset: "0",
+  //       repeat: "20px"
+  //     }
+  //   ],
+  //   strokeWeight: 8
+  // });
   const trail2 = new maps.Polyline({
     path: trail2Routes,
     geodesic: true,
-    strokeColor: "dodgerblue",
+    strokeColor: "red",
     strokeOpacity: 0.5,
     strokeWeight: 8
   });
   const trail3 = new maps.Polyline({
     path: trail3Routes,
     geodesic: true,
-    strokeColor: "dodgerblue",
+    strokeColor: "red",
     strokeOpacity: 0.5,
     strokeWeight: 8
   });
   const trail4 = new maps.Polyline({
     path: trail4Routes,
     geodesic: true,
-    strokeColor: "dodgerblue",
+    strokeColor: "red",
     strokeOpacity: 0.5,
     strokeWeight: 8
   });
@@ -128,3 +141,9 @@ export function renderTrails(map, maps) {
   trail3.setMap(map);
   trail4.setMap(map);
 }
+
+var lineSymbol = {
+  path: "M 0,-1 0,1",
+  strokeOpacity: 1,
+  scale: 4
+};

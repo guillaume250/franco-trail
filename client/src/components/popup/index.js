@@ -21,7 +21,12 @@ class Popup extends React.Component {
             {this.props.data.name}
           </DialogTitle>
           <DialogContent>
-            <DialogContentText>{this.props.data.longDesc}</DialogContentText>
+            <img
+              style={{ width: 500, height: "auto" }}
+              src={this.props.data.thumbnail}
+              className="responsive"
+              alt="Logo"
+            />
           </DialogContent>
           <DialogActions>
             <Button onClick={CloseIt} color="primary">

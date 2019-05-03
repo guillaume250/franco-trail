@@ -13,9 +13,10 @@ export const config = {
   styles,
   mapStyle: {
     styles,
-    minZoom: 14.54, // 0 is the world map
-    maxZoom: 17.54
+    minZoom: 14, // 0 is the world map
+    maxZoom: 17
   },
   maxZoom: 20,
-  mapContainer: { height: "50vh", width: "100%" }
+  mapContainer: { height: "50vh", width: "100%", alignItems: "center",
+  justifyContent: "center" }
 };
