@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "346db076bb23cfce97d5195a39dad570",
-    "url": "/static/media/MuseumLABlueCircleWEB.346db076.svg"
+    "revision": "9a28565ecc29f6d3a1d65f3221fc31cb",
+    "url": "/static/media/gendron-2.9a28565e.jpg"
   },
   {
-    "revision": "f2749634736ce5c1fa86",
+    "revision": "6dc2a7736f479d7fbac8",
     "url": "/static/css/main.21856538.chunk.css"
   },
   {
@@ -12,16 +12,16 @@ self.__precacheManifest = [
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "564fb9727a8cb4e57a94",
-    "url": "/static/js/2.99c03165.chunk.js"
+    "revision": "6b639ed3601c439b5cab",
+    "url": "/static/js/2.8c7828c4.chunk.js"
   },
   {
     "revision": "1188ece63adaf759705d81a65a44a4f4",
     "url": "/static/media/museumLA.1188ece6.jpg"
   },
   {
-    "revision": "f1479caafc30d93c2dbbf5fba5bc47be",
-    "url": "/static/media/basilica.f1479caa.JPG"
+    "revision": "3e758695520e44f897e8f066c308cdb3",
+    "url": "/static/media/basilica.3e758695.JPG"
   },
   {
     "revision": "5bb8501b6ff387b31925c5e362bc48c7",
@@ -32,20 +32,20 @@ self.__precacheManifest = [
     "url": "/static/media/FrancoCenterIconOneWEB.0ca49dd8.svg"
   },
   {
-    "revision": "e862b869aba848389f79340c932748b9",
-    "url": "/static/media/gendron-1.e862b869.jpg"
+    "revision": "9a28565ecc29f6d3a1d65f3221fc31cb",
+    "url": "/static/media/franco center.9a28565e.jpg"
   },
   {
     "revision": "bc5b96ff3ba3e10328b4ad98021f53ee",
     "url": "/static/media/gendron.bc5b96ff.jpg"
   },
   {
-    "revision": "9a28565ecc29f6d3a1d65f3221fc31cb",
-    "url": "/static/media/gendron-2.9a28565e.jpg"
+    "revision": "6dc2a7736f479d7fbac8",
+    "url": "/static/js/main.72acfe67.chunk.js"
   },
   {
-    "revision": "f2749634736ce5c1fa86",
-    "url": "/static/js/main.5a0ca628.chunk.js"
+    "revision": "346db076bb23cfce97d5195a39dad570",
+    "url": "/static/media/MuseumLABlueCircleWEB.346db076.svg"
   },
   {
     "revision": "90adf8607df70181534752d45123a8ba",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/static/media/PontPietonBlueCircleWEB.2829c8cb.svg"
   },
   {
-    "revision": "ac58b659f7a17eb6ab32ef4ac0c7288d",
-    "url": "/static/media/pieton1.ac58b659.jpg"
+    "revision": "44ede1f2ab724cc6d9e5b690d9faa5a3",
+    "url": "/static/media/pedestrian bridge.44ede1f2.jpg"
   },
   {
     "revision": "4a7d5d88aa8d148814e5e47a42abc322",
@@ -72,19 +72,15 @@ self.__precacheManifest = [
     "url": "/static/media/USMLACBlueCircleWEB.2b19effb.svg"
   },
   {
-    "revision": "eac1d10e5670877c824a5d60951efc29",
-    "url": "/static/media/USM.eac1d10e.jpg"
-  },
-  {
     "revision": "f8983f8ff8fe31a35f2e649f0df5603a",
     "url": "/static/media/LittleCanadaBlueCircleWEB.f8983f8f.svg"
   },
   {
-    "revision": "3bb156da174c93c007573f0d4150daac",
-    "url": "/static/media/canada.3bb156da.jpg"
+    "revision": "1dccc967c68abb71a10d4ee30a14e131",
+    "url": "/static/media/little canada.1dccc967.JPG"
   },
   {
-    "revision": "ea8a75ec6c72497c15caba5e11b456e6",
+    "revision": "e48a8390f7c204a2e6607194d7734091",
     "url": "/index.html"
   }
 ];
