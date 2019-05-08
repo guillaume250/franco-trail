@@ -17,6 +17,10 @@ export const config = {
     maxZoom: 17
   },
   maxZoom: 20,
-  mapContainer: { height: "50vh", width: "100%", alignItems: "center",
-  justifyContent: "center" }
+  mapContainer: {
+    height: "50vh",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 };

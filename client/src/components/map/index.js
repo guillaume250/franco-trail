@@ -4,30 +4,50 @@ import { center, config } from "../../config/map_config";
 import { renderMarkers } from "./markers";
 import { renderTrails } from "./trails";
 import Paper from "@material-ui/core/Paper";
-
+import { connect } from "react-redux";
+import { setMapObject } from "./actions";
+class AnyReactComponent extends Component {
+  render() {
+    return null;
+  }
+}
 class TrailMap extends Component {
   static defaultProps = config.defaultProps;
-
   GoogleMapApiConfigurations(map, maps) {
     renderMarkers(map, maps);
-    renderTrails(map, maps);
   }
   render() {
     return (
-      <Paper style={config.mapContainer} elevation={2}>
+      <Paper style={this.props.mapContainer} elevation={2}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: config.apikey }}
-          defaultCenter={center}
-          defaultZoom={config.zoom}
-          options={config.mapStyle}
+          bootstrapURLKeys={{ key: this.props.api }}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+          options={this.props.mapStyle}
           yesIWantToUseGoogleMapApiInternals
-          onGoogleApiLoaded={({ map, maps }) =>
-            this.GoogleMapApiConfigurations(map, maps)
-          }
+          onGoogleApiLoaded={({ map, maps }) => {
+            //this.GoogleMapApiConfigurations(map, maps);
+            this.props.dispatch(setMapObject(map));
+            renderTrails(map, maps);
+            this.props.zoomInMarker(map, maps);
+            this.props.renderMarkers(map, maps);
+          }}
         />
       </Paper>
     );
   }
 }
+const mapStateToProps = state => {
+  const { mapConfig } = state; // the state object comes from Redux store
+  return {
+    mapContainer: state.mapConfig.mapContainer,
+    api: mapConfig.apikey,
+    center: mapConfig.center,
+    zoom: mapConfig.zoom,
+    mapStyle: mapConfig.mapStyle,
+    zoomInMarker: mapConfig.zoomInMarker,
+    renderMarkers: mapConfig.renderMarkers
+  };
+};
 
-export default TrailMap;
+export default connect(mapStateToProps)(TrailMap);

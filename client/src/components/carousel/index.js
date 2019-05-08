@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
+import { connect } from "react-redux";
 
 import Avatar from "@material-ui/core/Avatar";
 import Popup from "../popup";
@@ -20,11 +21,12 @@ class Carousel extends React.Component {
   }
 
   handleClick = (e, data) => {
-    this.setState({ selectedPlace: data });
-    this.setState({ open: true });
+    this.props.zoomInMarker(null, null, data.key);
+    console.log(data);
+    // this.setState({ selectedPlace: data });
+    // this.setState({ open: true });
   };
   handleClose = () => {
-    console.log("HOLA");
     this.setState({ open: false });
   };
   componentDidMount() {
@@ -56,7 +58,7 @@ class Carousel extends React.Component {
     return (
       <div id="scrollLeft" className="scrolling-wrapper-flexbox">
         {places.map(place => (
-          <div key={place.key} className="card">
+          <div id="CArdxx" refs="CArdxx" key={place.key} className="card">
             <Card
               className={classes.card}
               onClick={e => this.handleClick(e, place)}
@@ -93,5 +95,12 @@ class Carousel extends React.Component {
 Carousel.propTypes = {
   classes: PropTypes.object.isRequired
 };
+const mapStateToProps = state => {
+  const { mapConfig } = state; // the state object comes from Redux store
+  return {
+    zoomInMarker: mapConfig.zoomInMarker
+  };
+};
 
-export default withStyles(styles)(Carousel);
+const Carous = withStyles(styles)(Carousel);
+export default connect(mapStateToProps)(Carous);
