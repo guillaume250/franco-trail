@@ -1,11 +1,10 @@
-import React from "react";
 import places from "../../../resources/places";
-import { center, config } from "../../../config/map_config";
-import ReactDOM from "react-dom";
+import config from "../config";
+
 export function renderMarkers(map, maps) {
   map.addListener("mouseout", function() {
     map.setZoom(config.zoom);
-    map.panTo(center);
+    map.panTo(config.center);
   });
   places.forEach(function(place) {
     let m1 = new maps.Marker({
@@ -20,9 +19,9 @@ export function renderMarkers(map, maps) {
     let i1 = new maps.InfoWindow({
       content: place.name
     });
-    let i2 = new maps.InfoWindow({
-      content: place.longDesc
-    });
+    // let i2 = new maps.InfoWindow({
+    //   content: place.longDesc
+    // });
     m1.addListener("mouseover", function() {
       i1.open(map, m1);
     });

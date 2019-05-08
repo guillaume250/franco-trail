@@ -21,7 +21,7 @@ class Carousel extends React.Component {
   }
 
   handleClick = (e, data) => {
-    this.props.zoomInMarker(null, null, data.key);
+    this.props.clickOnMarker(null, null, data.key);
     console.log(data);
     // this.setState({ selectedPlace: data });
     // this.setState({ open: true });
@@ -98,7 +98,7 @@ Carousel.propTypes = {
 const mapStateToProps = state => {
   const { mapConfig } = state; // the state object comes from Redux store
   return {
-    zoomInMarker: mapConfig.zoomInMarker
+    clickOnMarker: mapConfig.clickOnMarker
   };
 };
 

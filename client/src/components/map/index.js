@@ -1,21 +1,10 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
-import { center, config } from "../../config/map_config";
-import { renderMarkers } from "./markers";
-import { renderTrails } from "./trails";
 import Paper from "@material-ui/core/Paper";
 import { connect } from "react-redux";
 import { setMapObject } from "./actions";
-class AnyReactComponent extends Component {
-  render() {
-    return null;
-  }
-}
+
 class TrailMap extends Component {
-  static defaultProps = config.defaultProps;
-  GoogleMapApiConfigurations(map, maps) {
-    renderMarkers(map, maps);
-  }
   render() {
     return (
       <Paper style={this.props.mapContainer} elevation={2}>
@@ -26,10 +15,10 @@ class TrailMap extends Component {
           options={this.props.mapStyle}
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => {
-            //this.GoogleMapApiConfigurations(map, maps);
+            // **** Action dispatched to Save the Map instance in Redux Store's mapObject.
+            //*** This instance will be used to manipulate the map outside of the map DOM
             this.props.dispatch(setMapObject(map));
-            renderTrails(map, maps);
-            this.props.zoomInMarker(map, maps);
+            this.props.renderTrails(map, maps);
             this.props.renderMarkers(map, maps);
           }}
         />
@@ -45,8 +34,9 @@ const mapStateToProps = state => {
     center: mapConfig.center,
     zoom: mapConfig.zoom,
     mapStyle: mapConfig.mapStyle,
-    zoomInMarker: mapConfig.zoomInMarker,
-    renderMarkers: mapConfig.renderMarkers
+    clickOnMarker: mapConfig.clickOnMarker,
+    renderMarkers: mapConfig.renderMarkers,
+    renderTrails: mapConfig.renderTrails
   };
 };
 
