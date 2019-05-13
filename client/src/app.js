@@ -1,35 +1,30 @@
 import React, { Component } from "react";
-import Header from "./components/header";
-import Carousel from "./components/carousel";
-import Map from "./components/map";
+import MediaQuery from "react-responsive";
+
+import Desktop from "./display/desktop";
+import Tablet from "./display/tablet";
+import Mobile from "./display/mobile";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <div style={styles.body}>
-          <Map />
-          <Carousel RenderMarkers={this.renderMarkers} />
-        </div>
+        <MediaQuery query="(min-width: 1025px)">
+          <Desktop />
+          {/*Desktop*/}
+        </MediaQuery>
+        <MediaQuery query="(min-width: 768px) and (max-width: 1024px)">
+          <Tablet /> {/*Tablet*/}
+        </MediaQuery>
+        <MediaQuery query="(max-width: 767px) and (orientation: landscape)">
+          <Tablet /> {/*Mobile landscape*/}
+        </MediaQuery>
+        <MediaQuery query="(max-width: 767px) and (orientation: portrait)">
+          <Mobile /> {/*Mobile portrait*/}
+        </MediaQuery>
       </div>
     );
   }
 }
 
 export default App;
-
-const styles = {
-  container: {
-    flex: 1,
-    flexDirection: "column"
-  },
-
-  body: {
-    flex: 1,
-    paddingLeft: "3%",
-    paddingRight: "3%",
-
-    marginTop: 100
-  }
-};

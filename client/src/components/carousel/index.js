@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import Avatar from "@material-ui/core/Avatar";
 import Popup from "../popup";
 import styles from "./styles";
-import stylesCSS from "./styles.css";
+import "./styles.css";
 import places from "../../resources/places";
 
 class Carousel extends React.Component {

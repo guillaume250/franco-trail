@@ -7,12 +7,12 @@ import { setMapObject } from "./actions";
 class TrailMap extends Component {
   render() {
     return (
-      <Paper style={this.props.mapContainer} elevation={2}>
+      <Paper style={this.props.viewConfig.mapContainer} elevation={2}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: this.props.api }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-          options={this.props.mapStyle}
+          defaultCenter={this.props.viewConfig.center}
+          defaultZoom={this.props.viewConfig.zoom}
+          options={this.props.viewConfig.mapStyle}
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => {
             // **** Action dispatched to Save the Map instance in Redux Store's mapObject.
@@ -31,8 +31,6 @@ const mapStateToProps = state => {
   return {
     mapContainer: state.mapConfig.mapContainer,
     api: mapConfig.apikey,
-    center: mapConfig.center,
-    zoom: mapConfig.zoom,
     mapStyle: mapConfig.mapStyle,
     clickOnMarker: mapConfig.clickOnMarker,
     renderMarkers: mapConfig.renderMarkers,

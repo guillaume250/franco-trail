@@ -36,9 +36,34 @@
     -->
     <title>The Franco Trail</title>
   </head>
-  <body>
+  <body style="background-color:#243E90;">
+    <style media="screen">
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1 0 auto;
+      }
+      .footer {
+        -webkit-box-shadow: -1px 0px 14px 0px rgba(255, 255, 255, 0.82);
+        -moz-box-shadow: -1px 0px 14px 0px rgba(255, 255, 255, 0.82);
+        box-shadow: -1px 0px 14px 0px rgba(255, 255, 255, 0.82);
+        text-align: left;
+        padding-left: 20px;
+        flex-shrink: 0;
+        height: 50px;
+        bottom: 0;
+        margin: 40px;
+        color: white;
+      }
+    </style>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root" class="content"></div>
 
     <!--
       This HTML file is a template.
@@ -49,6 +74,14 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!--
+      <footer class="footer">
+        <p>
+          Contact us: <a href="mailto:info@museumla.org"> info@museumla.org</a>.
+          Call us: <a href="tel:2073333881"> 207-333-3881</a>.
+        </p>
+      </footer>
     -->
   </body>
 </html>

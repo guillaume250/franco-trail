@@ -5,7 +5,7 @@ import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import TitleImage from "../../resources/header_images/title.png";
 import theme from "../../config/themes_config";
 import styles from "./styles";
-import stylecss from "./stylecss.css";
+import "./stylecss.css";
 
 function SimpleAppBar(props) {
   return (

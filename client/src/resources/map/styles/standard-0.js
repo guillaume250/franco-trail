@@ -11,7 +11,25 @@ const mapStyles = [
     ]
   },
   {
+    featureType: "administrative.land_parcel",
+    elementType: "labels",
+    stylers: [
+      {
+        visibility: "off"
+      }
+    ]
+  },
+  {
     featureType: "poi",
+    stylers: [
+      {
+        visibility: "off"
+      }
+    ]
+  },
+  {
+    featureType: "poi",
+    elementType: "labels.text",
     stylers: [
       {
         visibility: "off"
@@ -21,6 +39,15 @@ const mapStyles = [
   {
     featureType: "road",
     elementType: "labels.icon",
+    stylers: [
+      {
+        visibility: "off"
+      }
+    ]
+  },
+  {
+    featureType: "road.local",
+    elementType: "labels",
     stylers: [
       {
         visibility: "off"

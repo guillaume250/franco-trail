@@ -94,6 +94,17 @@ export function renderTrails(map, maps) {
     { lat: 44.090216, lng: -70.218593 }
     //  { lat: 44.09149, lng: -70.219164 }
   ];
+  let trail5Routes = [
+    // The New Auburn
+    { lat: 44.09228, lng: -70.225031 }, //Bonny Park to NewBury Street
+    { lat: 44.091192, lng: -70.224567 },
+    { lat: 44.09108, lng: -70.224465 },
+    { lat: 44.089447, lng: -70.223712 },
+    { lat: 44.088904, lng: -70.22585 },
+    { lat: 44.089492, lng: -70.226199 },
+    { lat: 44.090316, lng: -70.22621 },
+    { lat: 44.091899, lng: -70.226107 }
+  ];
   const trail1 = new maps.Polyline({
     path: trail1Routes,
     trail2Routes,
@@ -136,10 +147,18 @@ export function renderTrails(map, maps) {
     strokeOpacity: 0.5,
     strokeWeight: 8
   });
+  const trail5 = new maps.Polyline({
+    path: trail5Routes,
+    geodesic: true,
+    strokeColor: "red",
+    strokeOpacity: 0.5,
+    strokeWeight: 8
+  });
   trail1.setMap(map);
   trail2.setMap(map);
   trail3.setMap(map);
   trail4.setMap(map);
+  trail5.setMap(map);
 }
 
 // var lineSymbol = {

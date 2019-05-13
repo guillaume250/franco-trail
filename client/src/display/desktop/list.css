@@ -1,0 +1,8 @@
+.listX:hover {
+  background-color: #d6e3f4; /* "#D6E3F4"*/
+  cursor: pointer;
+}
+.listContainer {
+  flex: 1;
+  height: 48vh;
+}

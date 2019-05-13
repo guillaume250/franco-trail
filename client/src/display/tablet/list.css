@@ -1,0 +1,12 @@
+.listXX {
+  display: inline;
+  overflow: auto;
+}
+
+.listXX:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+.listContainer {
+  height: 48vh;
+}
