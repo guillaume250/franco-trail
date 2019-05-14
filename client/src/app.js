@@ -17,7 +17,7 @@ class App extends Component {
           <Tablet /> {/*Tablet*/}
         </MediaQuery>
         <MediaQuery query="(max-width: 767px) and (orientation: landscape)">
-          <Tablet /> {/*Mobile landscape*/}
+          <Mobile /> {/*Mobile landscape*/}
         </MediaQuery>
         <MediaQuery query="(max-width: 767px) and (orientation: portrait)">
           <Mobile /> {/*Mobile portrait*/}

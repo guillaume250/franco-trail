@@ -28,6 +28,7 @@ const mapConfig = {
   zoomOut: function(map, maps) {
     const currentState = store.getState(); //Access the store to retrieve the map object
     map = currentState.mapConfig.mapObject; //Assigns the map object to the map param
+    console.log(currentState);
     map.setZoom(defaut_Settings.zoom);
     map.panTo({
       lat: defaut_Settings.center.lat,

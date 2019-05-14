@@ -83,87 +83,83 @@ class App extends Component {
           </Row>
           <Row>
             <Col span={3}>
-              {/*_____ side menu________*/}
               <Row>
-                <Paper style={styles.Title1}>
+                <Paper style={styles.sidemenu}>
                   <InputLabel style={styles.Title1_Title}>
                     {"Main Attractions"}
                   </InputLabel>
-                </Paper>
-              </Row>
-              <Row>
-                <Paper style={styles.sidemenu}>
                   <GridList>
                     <List />
                   </GridList>
                 </Paper>
               </Row>
+              <Row>
+                <Paper style={styles.interactionButtons}>
+                  <Row>
+                    <div>
+                      <FormControlLabel
+                        control={
+                          <Switch
+                            checked={this.state.showhistorical}
+                            onChange={this.handleshowhistorical}
+                            value={this.state.showhistorical}
+                            color="primary"
+                          />
+                        }
+                        label={"Show historical attractions"}
+                      />
+                    </div>
+                  </Row>
+                  <Row>
+                    <div>
+                      <FormControlLabel
+                        classes={{ label: classes.checkboxLabelB }}
+                        control={
+                          <Switch
+                            classes={{ color: "green" }}
+                            checked={this.state.showRestaurants}
+                            onChange={this.handleshowRestaurants}
+                            value={this.state.showRestaurants}
+                            color="primary"
+                          />
+                        }
+                        label="Show Restaurants, parkings, hotels and other businesses"
+                      />
+                    </div>
+                  </Row>
+
+                  <Row>
+                    <div>
+                      <FormControlLabel
+                        style={{ color: "white" }}
+                        control={
+                          <Radio
+                            checked={this.state.showMyLocation}
+                            onChange={this.handleMyLocation}
+                            value={this.state.showMyLocation}
+                            name="radio-button-demo"
+                            aria-label="Show my location"
+                            color="primary"
+                          />
+                        }
+                        label="Show my location"
+                      />
+                    </div>
+                  </Row>
+                </Paper>
+              </Row>
             </Col>
             {/*_____ side menu________*/}
-            <Col span={6}>
+            <Col span={9}>
               {/*_____ map________*/}
               <div style={styles.mapContainer}>
                 <Map viewConfig={this.props.viewConfig} />
               </div>
             </Col>
-            <Col span={3}>
-              <Paper style={styles.interactionButtons}>
-                <Row>
-                  <div>
-                    <FormControlLabel
-                      control={
-                        <Switch
-                          checked={this.state.showhistorical}
-                          onChange={this.handleshowhistorical}
-                          value={this.state.showhistorical}
-                          color="primary"
-                        />
-                      }
-                      label={"Show historical attractions"}
-                    />
-                  </div>
-                </Row>
-                <Row>
-                  <div>
-                    <FormControlLabel
-                      classes={{ label: classes.checkboxLabelB }}
-                      control={
-                        <Switch
-                          classes={{ color: "green" }}
-                          checked={this.state.showRestaurants}
-                          onChange={this.handleshowRestaurants}
-                          value={this.state.showRestaurants}
-                          color="primary"
-                        />
-                      }
-                      label="Show Restaurants, parkings, hotels and other businesses"
-                    />
-                  </div>
-                </Row>
-
-                <Row>
-                  <div>
-                    <FormControlLabel
-                      style={{ color: "white" }}
-                      control={
-                        <Radio
-                          checked={this.state.showMyLocation}
-                          onChange={this.handleMyLocation}
-                          value={this.state.showMyLocation}
-                          name="radio-button-demo"
-                          aria-label="Show my location"
-                          color="primary"
-                        />
-                      }
-                      label="Show my location"
-                    />
-                  </div>
-                </Row>
-              </Paper>
-            </Col>
           </Row>
           <Caroussel />
         </Col>
+        <Row />
       </div>
     );
   }
@@ -216,6 +212,8 @@ const styles = {
     textAlign: "center"
   },
   Title1_Title: {
+    marginLeft: "35px",
+    marginBottom: "35px",
     color: "black",
     fontSize: 22,
     fontWeight: 900,
@@ -235,12 +233,12 @@ const styles = {
   },
   sidemenu: {
     flex: "1",
-    backgroundColor: "#E1D31F",
+    backgroundColor: "#ece070",
     padding: "10px",
     marginTop: "10px",
     marginLeft: "10px",
     marginRight: "20px",
-    height: "50vh"
+    height: "55vh"
   },
   logo: {
     height: "150px",

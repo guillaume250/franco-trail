@@ -28,7 +28,7 @@ const places = [
   },
   {
     key: 3,
-    name: `Gendron-Franco héritage centre`,
+    name: `Gendron Franco Center`,
     shortDesc: `Originally the Church of St. Mary serving the Canadian...`,
     longDesc: `<h4>Gendron-Franco héritage centre</h4><p>Originally the Church of St. Mary serving the Canadian-French Catholic community of Little Canada, this establishment is now the Franco-Gendron center hosting musical and theatrical performances of all kinds.</p>`,
     coordinates: { lat: `44.091490`, lng: `-70.219164` },

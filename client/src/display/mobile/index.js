@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <Header />
         <div style={styles.body}>
-          <Map viewConfig={this.props.viewConfig} />
+          <Map viewConfig={this.props.mapConfig_Mobile} />
           <Carousel />
         </div>
       </div>
@@ -24,10 +24,10 @@ const mapStateToProps = state => {
 
   return {
     clickOnMarker: mapConfig.clickOnMarker,
-    viewConfig: mapConfig_Mobile
+    mapConfig_Mobile: mapConfig_Mobile
   };
 };
-export default App;
+export default connect(mapStateToProps)(App);
 
 const styles = {
   container: {
