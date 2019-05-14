@@ -4,6 +4,9 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+
 import { connect } from "react-redux";
 
 import Avatar from "@material-ui/core/Avatar";
@@ -11,6 +14,7 @@ import Popup from "../popup";
 import styles from "./styles";
 import "./styles.css";
 import places from "../../resources/places";
+let countedID = 0;
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -21,12 +25,18 @@ class Carousel extends React.Component {
   }
 
   handleClick = (e, data) => {
-    this.props.clickOnMarker(null, null, data.key);
-    console.log(data);
-    // this.setState({ selectedPlace: data });
-    // this.setState({ open: true });
+    if (countedID === data.key) {
+      countedID = 0;
+      this.setState({ selectedPlace: data });
+      this.setState({ open: true });
+    } else {
+      countedID = data.key;
+      this.props.clickOnMarker(null, null, data.key);
+      console.log(data);
+    }
   };
   handleClose = () => {
+    this.props.zoomOut();
     this.setState({ open: false });
   };
   componentDidMount() {
@@ -80,13 +90,13 @@ class Carousel extends React.Component {
                 subheader={place.shortDesc}
               />
             </Card>
-            <Popup
-              open={this.state.open}
-              CloseIt={this.handleClose}
-              data={this.state.selectedPlace}
-            />
           </div>
         ))}
+        <Popup
+          open={this.state.open}
+          CloseIt={this.handleClose}
+          data={this.state.selectedPlace}
+        />
       </div>
     );
   }
@@ -98,7 +108,8 @@ Carousel.propTypes = {
 const mapStateToProps = state => {
   const { mapConfig } = state; // the state object comes from Redux store
   return {
-    clickOnMarker: mapConfig.clickOnMarker
+    clickOnMarker: mapConfig.clickOnMarker,
+    zoomOut: mapConfig.zoomOut
   };
 };
 

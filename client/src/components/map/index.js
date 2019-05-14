@@ -6,6 +6,7 @@ import { setMapObject } from "./actions";
 
 class TrailMap extends Component {
   render() {
+    console.log(this.props.viewConfig);
     return (
       <Paper style={this.props.viewConfig.mapContainer} elevation={2}>
         <GoogleMapReact
@@ -20,6 +21,7 @@ class TrailMap extends Component {
             this.props.dispatch(setMapObject(map));
             this.props.renderTrails(map, maps);
             this.props.renderMarkers(map, maps);
+            this.props.zoomOut(map, maps);
           }}
         />
       </Paper>
@@ -34,7 +36,8 @@ const mapStateToProps = state => {
     mapStyle: mapConfig.mapStyle,
     clickOnMarker: mapConfig.clickOnMarker,
     renderMarkers: mapConfig.renderMarkers,
-    renderTrails: mapConfig.renderTrails
+    renderTrails: mapConfig.renderTrails,
+    zoomOut: mapConfig.zoomOut
   };
 };
 
