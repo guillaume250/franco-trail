@@ -12,7 +12,6 @@ import Radio from "@material-ui/core/Radio";
 import Caroussel from "../../components/carousel";
 import { connect } from "react-redux";
 import { showBusinesses, hideBusinesses } from "./actions";
-import { withStyles } from "@material-ui/core/styles";
 
 import logo from "../../resources/header_images/title.png";
 class App extends Component {
@@ -164,7 +163,6 @@ class App extends Component {
     );
   }
 }
-const labelo = <p>"Show Restaurants, parkings, hotels and other businesses"</p>;
 const mapStateToProps = state => {
   const { mapConfig } = state; // the state object comes from Redux store
   const { mapConfig_Desktop } = state; // the state object comes from Redux store
@@ -175,16 +173,8 @@ const mapStateToProps = state => {
   };
 };
 
-const Appli = withStyles(stylesX)(App);
-export default connect(mapStateToProps)(Appli);
-const stylesX = theme => ({
-  checkboxLabelA: {
-    fontWeight: 800
-  },
-  checkboxLabelB: {
-    color: "white"
-  }
-});
+export default connect(mapStateToProps)(App);
+
 const styles = {
   interactionButtons: {
     flex: "1",

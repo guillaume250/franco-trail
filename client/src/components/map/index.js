@@ -6,9 +6,8 @@ import { setMapObject } from "./actions";
 
 class TrailMap extends Component {
   render() {
-    console.log(this.props.viewConfig);
     return (
-      <Paper style={this.props.viewConfig.mapContainer} elevation={2}>
+      <Paper style={this.props.viewConfig.mapContainer} elevation={8}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: this.props.api }}
           defaultCenter={this.props.viewConfig.center}
@@ -21,7 +20,6 @@ class TrailMap extends Component {
             this.props.dispatch(setMapObject(map));
             this.props.renderTrails(map, maps);
             this.props.renderMarkers(map, maps);
-            this.props.zoomOut(map, maps);
           }}
         />
       </Paper>

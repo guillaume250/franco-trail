@@ -1,10 +1,10 @@
 import places from "../../../resources/places";
-import config from "../config";
+import { defaut_Settings } from "../config";
 
 export function renderMarkers(map, maps) {
   map.addListener("mouseout", function() {
-    map.setZoom(config.zoom);
-    map.panTo(config.center);
+    map.setZoom(defaut_Settings.zoom);
+    map.panTo(defaut_Settings.center);
   });
   places.forEach(function(place) {
     let m1 = new maps.Marker({
@@ -34,7 +34,7 @@ export function renderMarkers(map, maps) {
       map.setZoom(17);
       map.panTo(m1.getPosition());
       //console.log(place);
-      //i2.open(map, m1);
+      i1.open(map, m1);
     });
   });
 }

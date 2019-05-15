@@ -5,10 +5,10 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import { connect } from "react-redux";
-import Popup from "../../components/popup";
+import Popup from "../../../../components/popup";
 
-import places from "../../resources/places";
-import "./list.css";
+import places from "../../../../resources/places";
+import "./style.css";
 let countedID = 0;
 
 class AlignItemsList extends React.Component {

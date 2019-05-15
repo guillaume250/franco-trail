@@ -1,5 +1,8 @@
 //Styles generated with https://mapstyle.withgoogle.com/
 //Goal here is to display dinamically all styles
+export function retro1Z() {
+  return mapStyles;
+}
 const mapStyles = [
   {
     elementType: "geometry",
