@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import Paper from "@material-ui/core/Paper";
 import { connect } from "react-redux";
-import { setMapObject } from "./actions";
+import { setMapObject, setMapsObject } from "./actions";
 
 class TrailMap extends Component {
   render() {
@@ -18,6 +18,8 @@ class TrailMap extends Component {
             // **** Action dispatched to Save the Map instance in Redux Store's mapObject.
             //*** This instance will be used to manipulate the map outside of the map DOM
             this.props.dispatch(setMapObject(map));
+            this.props.dispatch(setMapsObject(maps));
+
             this.props.renderTrails(map, maps);
             this.props.renderMarkers(map, maps);
           }}

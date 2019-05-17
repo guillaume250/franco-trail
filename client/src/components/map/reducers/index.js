@@ -6,6 +6,11 @@ function mapConfig(state = mapConfigs, action) {
       mapObject: action.mapObject
     });
     return updatedState;
+  } else if (action.type === "INITIALIZE_MAPS_OBJECT") {
+    const updatedState = Object.assign({}, state, {
+      mapsObject: action.mapsObject
+    });
+    return updatedState;
   } else {
     return state;
   }

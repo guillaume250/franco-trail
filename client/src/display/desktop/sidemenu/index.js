@@ -2,114 +2,139 @@ import React, { Component } from "react";
 import { Row, Col } from "react-simple-flex-grid";
 import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
-import { showBusinesses, hideBusinesses } from "../actions";
 
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import InputLabel from "@material-ui/core/InputLabel";
 import Switch from "@material-ui/core/Switch";
-import Radio from "@material-ui/core/Radio";
 import Paper from "@material-ui/core/Paper";
 import GridList from "@material-ui/core/GridList";
+import Checkbox from "@material-ui/core/Checkbox";
 
 import List from "./list";
+import Alert from "../../../components/alert";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    //  this.handleClose = this.handleClose.bind(this);
+    this.handleCloseAlert = this.handleCloseAlert.bind(this);
     this.state = {
       ShowOtherPlaces: false,
       showMyLocation: false,
-      myLocation: {}
+      showhistorical: false,
+      IsOutbound: false
     };
   }
-
+  handleCloseAlert = () => {
+    this.setState({ IsOutbound: false });
+  };
+  handleshowhistorical = () => {
+    if (this.state.showhistorical) {
+      this.props.ShowOrHide_H_A(false);
+      this.setState({ showhistorical: false });
+    } else {
+      this.props.ShowOrHide_H_A(true);
+      this.setState({ showhistorical: true });
+    }
+  };
   handleShowOtherPlaces = () => {
     //this.props.handleMyLocation(null, null, data.key);
     if (this.state.ShowOtherPlaces) {
       this.setState({ ShowOtherPlaces: false });
       console.log(this.state.ShowOtherPlaces);
-
-      this.props.dispatch(hideBusinesses());
+      this.props.hideBusinesses();
     } else {
       this.setState({ ShowOtherPlaces: true });
       console.log(this.state.ShowOtherPlaces);
-
-      this.props.dispatch(showBusinesses());
+      this.props.showBusinesses();
     }
   };
   handleMyLocation = (e, data) => {
-    //this.props.handleMyLocation(null, null, data.key);
-    if (this.state.showMyLocation) {
+    const openAlert = () => {
+      this.setState({ IsOutbound: true }); //alert("You are not inbound");
       this.setState({ showMyLocation: false });
-    } else {
-      this.setState({ showMyLocation: true });
-    }
+      this.props.zoomOut();
+    };
+
+    this.props.showMyLocation(function(isInbound) {
+      if (!isInbound) {
+        openAlert();
+      }
+    });
+    this.setState({ showMyLocation: true });
   };
 
   render() {
     return (
-      <Col span={12}>
-        <Row>
-          <Paper style={styles.sidemenu}>
-            <InputLabel style={styles.Title1_Title}>
-              {"Main Attractions"}
-            </InputLabel>
-            <GridList>
-              <List />
-            </GridList>
-          </Paper>
-        </Row>
+      <div>
+        <Col span={12}>
+          <Row>
+            <Paper style={styles.sidemenu}>
+              <InputLabel style={styles.Title1_Title}>
+                {"Main Attractions"}
+              </InputLabel>
+              <GridList>
+                <List />
+              </GridList>
+            </Paper>
+          </Row>
 
-        <Row>
-          <Paper style={styles.interactionButtons}>
-            <Row>
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={this.state.showhistorical}
-                    onChange={this.handleshowhistorical}
-                    value={this.state.showhistorical}
-                    color="primary"
-                  />
-                }
-                label={"Show historical attractions"}
-              />
-            </Row>
+          <Row>
+            <Paper style={styles.interactionButtons}>
+              <Row>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={this.state.showhistorical}
+                      onChange={this.handleshowhistorical}
+                      value={this.state.showhistorical}
+                      color="primary"
+                    />
+                  }
+                  label={"Show historical attractions"}
+                />
+              </Row>
 
-            <Row>
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={this.state.ShowOtherPlaces}
-                    onChange={this.handleShowOtherPlaces}
-                    value={this.state.ShowOtherPlaces}
-                    color="primary"
-                  />
-                }
-                label="Show Restaurants, parkings, hotels and other businesses"
-              />
-            </Row>
+              <Row>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={this.state.ShowOtherPlaces}
+                      onChange={this.handleShowOtherPlaces}
+                      value={this.state.ShowOtherPlaces}
+                      color="primary"
+                    />
+                  }
+                  label="Show Restaurants, parkings, hotels and other businesses"
+                />
+              </Row>
 
-            <Row>
-              <FormControlLabel
-                style={{ color: "white" }}
-                control={
-                  <Radio
-                    checked={this.state.showMyLocation}
-                    onChange={this.handleMyLocation}
-                    value={this.state.showMyLocation}
-                    name="radio-button-demo"
-                    aria-label="Show my location"
-                    color="primary"
-                  />
-                }
-                label="Show my location"
-              />
-            </Row>
-          </Paper>
-        </Row>
-      </Col>
+              <Row>
+                <FormControlLabel
+                  style={{ color: "white", marginLeft: "0" }}
+                  control={
+                    <Checkbox
+                      checked={this.state.showMyLocation}
+                      onChange={this.handleMyLocation}
+                      value={"My location"}
+                      color="primary"
+                    />
+                  }
+                  label="Show my location"
+                />
+              </Row>
+            </Paper>
+          </Row>
+        </Col>
+        <Alert
+          open={this.state.IsOutbound}
+          CloseIt={this.handleCloseAlert}
+          title={"User not on the trail"}
+          message={"You are not in Franco Trail Area"}
+          explanations={
+            "You need to be on the trail (or closeby) to view your location"
+          }
+        />
+      </div>
     );
   }
 }
@@ -118,7 +143,12 @@ const mapStateToProps = state => {
   const { mapConfig_Desktop } = state; // the state object comes from Redux store
 
   return {
+    zoomOut: mapConfig.zoomOut,
     clickOnMarker: mapConfig.clickOnMarker,
+    showBusinesses: mapConfig.showBusinesses,
+    hideBusinesses: mapConfig.hideBusinesses,
+    ShowOrHide_H_A: mapConfig.ShowOrHide_H_A,
+    showMyLocation: mapConfig.showMyLocation,
     viewConfig: mapConfig_Desktop
   };
 };
@@ -131,9 +161,7 @@ const styles = {
     backgroundColor: "#D7E4F4",
     paddingTop: "15px",
     marginTop: "10px",
-    marginLeft: "10px",
     paddingLeft: "20px",
-    marginRight: "20px",
     height: "170px"
   },
   contactus: {
@@ -175,9 +203,6 @@ const styles = {
     flex: "1",
     backgroundColor: "#ece070",
     padding: "10px",
-    marginTop: "10px",
-    marginLeft: "10px",
-    marginRight: "20px",
     height: "55vh"
   }
 };

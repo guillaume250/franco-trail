@@ -1,5 +1,5 @@
 import mapConfigs from "../config"; //This represents the initial Map state
-import { standard0, standard2 } from "../../../resources/map/styles";
+import { standard2 } from "../../../resources/map/styles";
 
 const showBusinesses = {
   styles: standard2.default,
