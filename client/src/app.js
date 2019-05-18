@@ -6,22 +6,24 @@ import Tablet from "./display/tablet";
 import Mobile from "./display/mobile";
 
 class App extends Component {
+  componentDidMount() {}
   render() {
     return (
       <div>
-        <MediaQuery query="(min-width: 1025px)">
+        <Desktop />
+        {/*
+        <MediaQuery query="(min-width: 1291px)">
           <Desktop />
-          {/*Desktop*/}
         </MediaQuery>
         <MediaQuery query="(min-width: 768px) and (max-width: 1290px)">
-          <Tablet /> {/*Tablet*/}
+          <Tablet />
         </MediaQuery>
         <MediaQuery query="(max-width: 767px) and (orientation: landscape)">
-          <Mobile /> {/*Mobile landscape*/}
+          <Mobile />
         </MediaQuery>
         <MediaQuery query="(max-width: 767px) and (orientation: portrait)">
-          <Mobile /> {/*Mobile portrait*/}
-        </MediaQuery>
+          <Mobile />
+        </MediaQuery>*/}
       </div>
     );
   }

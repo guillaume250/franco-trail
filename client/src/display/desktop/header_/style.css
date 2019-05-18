@@ -1,0 +1,45 @@
+.image {
+  height: 200px;
+  width: auto;
+}
+
+.parentX {
+  background-color: black;
+  background-image: url("./falls.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 5;
+  height: 100vh;
+  width: 100vw;
+}
+.child1 {
+  display: flex;
+  height: 90vh;
+  flex-direction: column;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical*/
+}
+.child2 {
+  display: flex;
+  height: 10vh;
+  padding: 10px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical*/
+}
+#headline {
+  font-family: "Pacifico";
+  font-weight: 400;
+  font-size: 4vw;
+  color: #ffffff;
+  line-height: 1em;
+}
+
+#subtitle {
+  margin-top: 10px;
+  font-family: "Pacifico", cursive;
+  font-size: 1.5vw;
+  color: #ffffff;
+  line-height: 1em;
+}

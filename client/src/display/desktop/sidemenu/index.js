@@ -65,21 +65,21 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={styles.SideMenu}>
         <Col span={12}>
           <Row>
-            <Paper style={styles.sidemenu}>
-              <InputLabel style={styles.Title1_Title}>
+            <Paper elevation={4} style={styles.attractions_container}>
+              <InputLabel style={styles.main_attractions_title}>
                 {"Main Attractions"}
               </InputLabel>
-              <GridList>
+              <GridList style={styles.main_attractions}>
                 <List />
               </GridList>
             </Paper>
           </Row>
 
           <Row>
-            <Paper style={styles.interactionButtons}>
+            <Paper elevation={4} style={styles.control_buttons}>
               <Row>
                 <FormControlLabel
                   control={
@@ -156,53 +156,41 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(App);
 
 const styles = {
-  interactionButtons: {
-    flex: "1",
-    backgroundColor: "#D7E4F4",
-    paddingTop: "15px",
-    marginTop: "10px",
-    paddingLeft: "20px",
-    height: "170px"
+  SideMenu: {
+    display: "flex",
+    marginRight: "30px",
+    height: "75vh",
+    overflow: "hidden"
   },
-  contactus: {
-    color: "white"
+  attractions_container: {
+    margin: "5px",
+    padding: "10px",
+    backgroundColor: "#ece070",
+    flex: "1"
   },
-  Title1: {
-    flex: "1",
-    color: "black",
-    backgroundColor: "#E1D31F",
-    paddingTop: "15px",
-    paddingLeft: "10px",
-    marginTop: "10px",
-    marginLeft: "10px",
-    height: "50px",
-    marginRight: "20px",
-    textAlign: "center"
-  },
-  Title1_Title: {
-    marginLeft: "35px",
-    marginBottom: "35px",
+  main_attractions_title: {
+    padding: "35px",
     color: "black",
     fontSize: 22,
     fontWeight: 900,
-    fontFamily: "'Arial Black', Gadget, sans-serif"
+    fontFamily: "'Signika', sans-serif"
   },
-  Title2: {
-    color: "black",
-    backgroundColor: "#E1D31F",
-    paddingTop: "15px",
-    paddingLeft: "10px",
-    marginTop: "10px",
-    marginLeft: "10px",
-    height: "50px",
-    marginRight: "30px",
-    verticalAlign: "middle",
-    textAlign: "center"
-  },
-  sidemenu: {
+  main_attractions: {
     flex: "1",
     backgroundColor: "#ece070",
     padding: "10px",
-    height: "55vh"
+    height: "45vh",
+    overflowY: "scroll"
+  },
+  control_buttons: {
+    marginTop: "10px",
+
+    margin: "5px",
+    flex: "1",
+    backgroundColor: "#D7E4F4",
+    paddingLeft: "20px",
+    maxHeight: "25vh",
+    position: "absolute",
+    bottom: 0
   }
 };

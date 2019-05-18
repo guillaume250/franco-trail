@@ -35,8 +35,8 @@ class AlignItemsList extends React.Component {
   };
   render() {
     return (
-      <div>
-        <List className="listContainer" style={{ color: "black" }}>
+      <div className="listContainer">
+        <List style={{ color: "black" }}>
           {places.map(place => (
             <ListItem
               key={place.key}

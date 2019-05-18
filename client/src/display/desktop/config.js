@@ -12,10 +12,12 @@ const mapConfig = {
     // maxZoom: 17
   },
   mapContainer: {
-    height: "80vh",
+    height: "75vh",
     width: "100%",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    margin: "5px",
+    marginRight: "5px"
   },
   SideMenu: {
     height: "80vh"

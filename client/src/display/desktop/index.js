@@ -4,7 +4,7 @@ import "react-simple-flex-grid/lib/main.css";
 import "./index.css";
 import { connect } from "react-redux";
 
-import Header from "./header";
+import Header from "./header_";
 import Map from "../../components/map";
 import Caroussel from "../../components/carousel";
 import SideMenu from "./sidemenu";
@@ -13,27 +13,25 @@ import Partners from "./partners";
 class App extends Component {
   render() {
     return (
-      <div>
+      <Col>
         <Row>
           <Header />
         </Row>
-        <Row className="parent">
-          <Col span={3} style={this.props.viewConfig.SideMenu}>
-            <SideMenu />
-          </Col>
-          <Col span={9}>
-            <div style={styles.mapContainer}>
+        <Row id="mapSection" className="CenterMe">
+          <div className="parent">
+            <Col span={3} style={this.props.viewConfig.SideMenu}>
+              <SideMenu />
+            </Col>
+            <Col span={9} style={styles.mapContainer}>
               <Map viewConfig={this.props.viewConfig} />
-            </div>
-          </Col>
+            </Col>
+          </div>
         </Row>
-        <Row>
+        <Col>
           <Caroussel />
-        </Row>
-        <Row>
-          <Partners />
-        </Row>
-      </div>
+          {/*<Partners />*/}
+        </Col>
+      </Col>
     );
   }
 }
@@ -44,4 +42,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(App);
 
-const styles = { mapContainer: { padding: "10px", marginRight: "20px" } };
+const styles = {
+  mapContainer: { height: "70vh" }
+};

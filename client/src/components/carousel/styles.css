@@ -1,6 +1,8 @@
 .scrolling-wrapper-flexbox {
-  padding: 20px;
+  margin: 0;
+  margin: 10px;
 
+  width: 98vw;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;

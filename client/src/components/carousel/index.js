@@ -64,37 +64,39 @@ class Carousel extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div id="scrollLeft" className="scrolling-wrapper-flexbox">
-        {places.map(place => (
-          <div id="CArdxx" refs="CArdxx" key={place.key} className="card">
-            <Card
-              className={classes.card}
-              onClick={e => this.handleClick(e, place)}
-            >
-              <CardMedia
-                className={classes.media}
-                image={place.thumbnail}
-                title={place.name}
-              />
-              <CardHeader
-                avatar={
-                  <Avatar
-                    aria-label={place.name}
-                    className="imgAvatar"
-                    src={place.icon}
-                  />
-                }
-                title={place.name}
-                subheader={place.shortDesc}
-              />
-            </Card>
-          </div>
-        ))}
-        <Popup
-          open={this.state.open}
-          CloseIt={this.handleClose}
-          data={this.state.selectedPlace}
-        />
+      <div>
+        <div id="scrollLeft" className="scrolling-wrapper-flexbox">
+          {places.map(place => (
+            <div id="CArdxx" refs="CArdxx" key={place.key} className="card">
+              <Card
+                className={classes.card}
+                onClick={e => this.handleClick(e, place)}
+              >
+                <CardMedia
+                  className={classes.media}
+                  image={place.thumbnail}
+                  title={place.name}
+                />
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      aria-label={place.name}
+                      className="imgAvatar"
+                      src={place.icon}
+                    />
+                  }
+                  title={place.name}
+                  subheader={place.shortDesc}
+                />
+              </Card>
+            </div>
+          ))}
+          <Popup
+            open={this.state.open}
+            CloseIt={this.handleClose}
+            data={this.state.selectedPlace}
+          />
+        </div>
       </div>
     );
   }

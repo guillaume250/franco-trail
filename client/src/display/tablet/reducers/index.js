@@ -1,5 +1,5 @@
 import mapConfigs from "../config"; //This represents the initial Map state
-import { standard0, standard2 } from "../../../resources/map/styles";
+//import { standard0, standard2 } from "../../../resources/map/styles";
 function mapConfig(state = mapConfigs, action) {
   if (action.type === "SHOW_BUSINESSES") {
     const updatedState = Object.assign({}, state, {

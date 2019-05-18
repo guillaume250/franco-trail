@@ -4,14 +4,14 @@ import attractions from "../../resources/places_attractions";
 import api from "../../config/api";
 import { renderMarkers } from "./markers";
 import { renderTrails } from "./trails";
-import { standard0, standard2 } from "../../resources/map/styles";
+import { standard1, standard2 } from "../../resources/map/styles";
 
 export const defaut_Settings = {
   center: {
-    lat: 44.0960371,
-    lng: -70.2214903
+    lat: 44.0949288,
+    lng: -70.2230216
   },
-  zoom: 15.6
+  zoom: 15.4
 };
 
 const mapConfig = {
@@ -90,11 +90,11 @@ const mapConfig = {
     map = currentState.mapConfig.mapObject;
     maps = currentState.mapConfig.mapsObject;
 
-    var styledMapType = new maps.StyledMapType(standard0.default, {
+    var styledMapType = new maps.StyledMapType(standard1.default, {
       name: "Hide businesses"
     });
-    map.mapTypes.set("standard0_map", styledMapType);
-    map.setMapTypeId("standard0_map");
+    map.mapTypes.set("standard1_map", styledMapType);
+    map.setMapTypeId("standard1_map");
   },
   showMyLocation: function getLocation(callback, map, maps) {
     const currentState = store.getState();

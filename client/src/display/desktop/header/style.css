@@ -1,10 +1,6 @@
 .image {
-  background-color: #243e90;
-  background-image: url("../../../resources/css/light-gray.png");
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 5px double #1c6ea4;
-  border-radius: 24px;
-  width: 800px;
+  height: 200px;
+  width: auto;
 }
 
 .parent {
