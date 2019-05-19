@@ -64,7 +64,7 @@ class Carousel extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <div className="CarouselTopContainer">
         <div id="scrollLeft" className="scrolling-wrapper-flexbox">
           {places.map(place => (
             <div id="CArdxx" refs="CArdxx" key={place.key} className="card">
@@ -78,13 +78,8 @@ class Carousel extends React.Component {
                   title={place.name}
                 />
                 <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label={place.name}
-                      className="imgAvatar"
-                      src={place.icon}
-                    />
-                  }
+                  className="AvatarAndDescription"
+                  avatar={<Avatar aria-label={place.name} src={place.icon} />}
                   title={place.name}
                   subheader={place.shortDesc}
                 />

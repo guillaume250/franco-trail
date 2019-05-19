@@ -4,6 +4,8 @@ import attractions from "../../resources/places_attractions";
 import api from "../../config/api";
 import { renderMarkers } from "./markers";
 import { renderTrails } from "./trails";
+import { hideAttractions as renderAttractions } from "../renderAttractions";
+
 import { standard1, standard2 } from "../../resources/map/styles";
 
 export const defaut_Settings = {
@@ -20,6 +22,7 @@ const mapConfig = {
   mapsObject: {},
   renderMarkers,
   renderTrails,
+  renderAttractions,
   zoomOut: function(map, maps) {
     const currentState = store.getState(); //Access the store to retrieve the map object
     map = currentState.mapConfig.mapObject; //Assigns the map object to the map param
@@ -28,6 +31,12 @@ const mapConfig = {
       lat: defaut_Settings.center.lat,
       lng: defaut_Settings.center.lng
     });
+  },
+  getMapObjects: function(callback) {
+    const currentState = store.getState();
+    const map = currentState.mapConfig.mapObject;
+    const maps = currentState.mapConfig.mapsObject;
+    return callback(map, maps);
   },
   clickOnMarker: function(map, maps, markerID) {
     const currentState = store.getState(); //Access the store to retrieve the map object
@@ -50,7 +59,7 @@ const mapConfig = {
     attractions.forEach(function(attraction) {
       let marker = new maps.Marker({
         position: attraction.coordinates,
-        map: map,
+        map: null,
         animation: maps.Animation.DROP,
         zIndex: attraction.key,
         title: attraction.name,
@@ -62,16 +71,13 @@ const mapConfig = {
     if (show) {
       Markers.forEach(function(marker) {
         marker.setMap(map);
-        console.log(map);
       });
     } else {
       Markers.forEach(function(marker) {
-        marker.setMap(null);
         marker.setPosition(null);
+        marker.setMap(null);
         marker = null;
-        console.log("Null");
       });
-      map.panBy(0, 0);
     }
   },
   showBusinesses: function(map, maps) {

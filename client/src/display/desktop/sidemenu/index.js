@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row, Col } from "react-simple-flex-grid";
 import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
-
+import { showAttraction_, hideAttraction_ } from "./actions";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import InputLabel from "@material-ui/core/InputLabel";
 import Switch from "@material-ui/core/Switch";
@@ -28,11 +28,25 @@ class App extends Component {
     this.setState({ IsOutbound: false });
   };
   handleshowhistorical = () => {
+    const showAttractions = (show, map, maps) => {
+      if (show) {
+        this.props.ShowOrHide_H_A(true);
+        //this.props.dispatch(showAttraction_(map, maps));
+      } else {
+        //this.props.dispatch(hideAttraction_(map, maps));
+        this.props.ShowOrHide_H_A(false);
+      }
+    };
+
     if (this.state.showhistorical) {
-      this.props.ShowOrHide_H_A(false);
+      this.props.getMapObjects(function(map, maps) {
+        showAttractions(false, map, maps);
+      });
       this.setState({ showhistorical: false });
     } else {
-      this.props.ShowOrHide_H_A(true);
+      this.props.getMapObjects(function(map, maps) {
+        showAttractions(true, map, maps);
+      });
       this.setState({ showhistorical: true });
     }
   };
@@ -149,6 +163,7 @@ const mapStateToProps = state => {
     hideBusinesses: mapConfig.hideBusinesses,
     ShowOrHide_H_A: mapConfig.ShowOrHide_H_A,
     showMyLocation: mapConfig.showMyLocation,
+    getMapObjects: mapConfig.getMapObjects,
     viewConfig: mapConfig_Desktop
   };
 };

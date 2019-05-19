@@ -1,7 +1,10 @@
-/* body {
+body {
   background-color: #243e90;
-  background-image: url("./resources/css/light-gray.png");
-} */
+  background-image: url("./resources/css/flowers.png");
+  /* background-image: url("./resources/css/gray-floral.png"); */
+  /* background-image: url("/resources/css/light-gray.png"); */
+  /* background-image: url("./resources/css/skulls.png"); */
+}
 * {
   margin: 0;
   padding: 0;

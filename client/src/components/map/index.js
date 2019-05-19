@@ -22,6 +22,7 @@ class TrailMap extends Component {
 
             this.props.renderTrails(map, maps);
             this.props.renderMarkers(map, maps);
+            //this.props.renderAttractions(map, maps);
           }}
         />
       </Paper>
@@ -37,6 +38,7 @@ const mapStateToProps = state => {
     clickOnMarker: mapConfig.clickOnMarker,
     renderMarkers: mapConfig.renderMarkers,
     renderTrails: mapConfig.renderTrails,
+    renderAttractions: mapConfig.renderAttractions,
     zoomOut: mapConfig.zoomOut
   };
 };

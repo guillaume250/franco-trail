@@ -9,6 +9,7 @@ import Map from "../../components/map";
 import Caroussel from "../../components/carousel";
 import SideMenu from "./sidemenu";
 import Partners from "./partners";
+import Footer from "./footer";
 
 class App extends Component {
   render() {
@@ -29,8 +30,13 @@ class App extends Component {
         </Row>
         <Col>
           <Caroussel />
-          {/*<Partners />*/}
         </Col>
+        <Row>
+          <Partners />
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
       </Col>
     );
   }

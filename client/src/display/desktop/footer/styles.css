@@ -1,0 +1,39 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  border: 1px solid lightgray;
+  background-color: #458cff;
+  /* background-image: url("../../../resources/css/gray-floral.png"); */
+  background-image: url("../../../resources/css/light-gray.png");
+  /* background-image: url("../../../resources/css/flowers.png"); */
+}
+.footerContactTitle {
+  font-family: "Pacifico", cursive;
+  font-size: 1.5vw;
+  color: #ffffff;
+  line-height: 1em;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+.footerContactDetails {
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footerContactDetails a {
+  color: inherit;
+}
+.FooterSeparator {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}

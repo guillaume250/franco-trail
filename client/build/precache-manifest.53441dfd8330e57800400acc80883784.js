@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/gendron-2.9a28565e.jpg"
   },
   {
-    "revision": "7254536abf089b5bf2b0",
-    "url": "/static/css/main.d4018ba3.chunk.css"
+    "revision": "ce8c226b53fb993f3d2c",
+    "url": "/static/css/main.10d2c847.chunk.css"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -16,24 +16,28 @@ self.__precacheManifest = [
     "url": "/static/media/FAC.4dc70b1c.jpg"
   },
   {
-    "revision": "1c069f0eb1dadbdd3815",
-    "url": "/static/js/2.cc878774.chunk.js"
-  },
-  {
-    "revision": "3e758695520e44f897e8f066c308cdb3",
-    "url": "/static/media/basilica.3e758695.JPG"
+    "revision": "6795dbd5b5f566fa9a29",
+    "url": "/static/js/2.f4187c2f.chunk.js"
   },
   {
     "revision": "1188ece63adaf759705d81a65a44a4f4",
     "url": "/static/media/museumLA.1188ece6.jpg"
   },
   {
-    "revision": "cbb1918cf47b0b4a4a127fa1767971b6",
-    "url": "/static/media/icon.cbb1918c.svg"
+    "revision": "3e758695520e44f897e8f066c308cdb3",
+    "url": "/static/media/basilica.3e758695.JPG"
   },
   {
     "revision": "5bb8501b6ff387b31925c5e362bc48c7",
     "url": "/static/media/title.5bb8501b.png"
+  },
+  {
+    "revision": "bc5b96ff3ba3e10328b4ad98021f53ee",
+    "url": "/static/media/gendron.bc5b96ff.jpg"
+  },
+  {
+    "revision": "cbb1918cf47b0b4a4a127fa1767971b6",
+    "url": "/static/media/icon.cbb1918c.svg"
   },
   {
     "revision": "90adf8607df70181534752d45123a8ba",
@@ -52,12 +56,8 @@ self.__precacheManifest = [
     "url": "/static/media/franco center.9a28565e.jpg"
   },
   {
-    "revision": "bc5b96ff3ba3e10328b4ad98021f53ee",
-    "url": "/static/media/gendron.bc5b96ff.jpg"
-  },
-  {
-    "revision": "7254536abf089b5bf2b0",
-    "url": "/static/js/main.5822ec23.chunk.js"
+    "revision": "ce8c226b53fb993f3d2c",
+    "url": "/static/js/main.328d3034.chunk.js"
   },
   {
     "revision": "2829c8cb884b3d67df067546d82a2ccc",
@@ -108,11 +108,11 @@ self.__precacheManifest = [
     "url": "/static/media/basilica.cc051545.jpg"
   },
   {
-    "revision": "1c069f0eb1dadbdd3815",
+    "revision": "6795dbd5b5f566fa9a29",
     "url": "/static/css/2.9d14aa89.chunk.css"
   },
   {
-    "revision": "6a2dfd2d7a4c2215a71f96b64b6ea17f",
+    "revision": "30cca8c4a2beccb45214981ae6f52e41",
     "url": "/index.html"
   }
 ];

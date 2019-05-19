@@ -1,8 +1,9 @@
+.CarouselTopContainer {
+  display: flex;
+  justify-content: center;
+}
 .scrolling-wrapper-flexbox {
-  margin: 0;
-  margin: 10px;
-
-  width: 98vw;
+  width: 94vw;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -14,9 +15,12 @@
 .card {
   flex: 0 0 auto;
   margin: 20px;
-  max-width: 300px;
-  height: auto;
+  max-width: 250px;
+  height: 250px;
 }
-.imgAvatar {
-  height: 50px;
+
+.AvatarAndDescription {
+  width: 240px;
+  overflow: hidden;
+  height: 70px;
 }
