@@ -2,6 +2,15 @@
   background-color: #d6e3f4; /* "#D6E3F4"*/
   cursor: pointer;
 }
+
+.listX:hover .listMe {
+  color: black;
+}
+.listMe {
+  color: white;
+  margin-left: 10px;
+}
 .listContainer {
   flex: 1;
+  color: white;
 }

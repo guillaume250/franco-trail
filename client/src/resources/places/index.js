@@ -9,8 +9,9 @@ const places = [
     icon: require("./places_icons/BasilicaInBlueCircleWEB.svg"),
     thumbnail: require("./places_photographs/basilica.JPG"),
     photos: [
-      require("./places_photographs/gendron.jpg"),
-      require("./places_photographs/museumLA.jpg")
+      require("./places_photographs/basil2.jpg"),
+      require("./places_photographs/basil1.jpg"),
+      require("./places_photographs/basil0.jpg")
     ],
     hasContact: true,
     contactField: {
@@ -25,10 +26,11 @@ const places = [
     longDesc: `The Museum L-A. Museum L-A connects generations and cultures, fosters a spirit of discovery and human ingenuity, and helps people experience the rich history and heritage of work, the arts and community.`,
     coordinates: { lat: `44.095368`, lng: `-70.218439` },
     icon: require("./places_icons/MuseumLABlueCircleWEB.svg"),
-    thumbnail: require("./places_photographs/museumLA.jpg"),
+    thumbnail: require("./places_photographs/4.jpg"),
     photos: [
-      require("./places_photographs/basilica.JPG"),
-      require("./places_photographs/museumLA.jpg")
+      require("./places_photographs/2.jpg"),
+      require("./places_photographs/3.jpg"),
+      require("./places_photographs/22.jpg")
     ],
     hasContact: true,
     contactField: {
@@ -45,8 +47,9 @@ const places = [
     icon: require("./places_icons/FrancoCenterIconOneWEB.svg"),
     thumbnail: require("./places_photographs/og/franco center.jpg"),
     photos: [
-      require("./places_photographs/gendron.jpg"),
-      require("./places_photographs/gendron-2.jpg")
+      require("./places_photographs/gendron-0.jpg"),
+      require("./places_photographs/gendron-2.jpg"),
+      require("./places_photographs/1franco center.jpg")
     ],
     hasContact: true,
     contactField: {
@@ -64,8 +67,9 @@ const places = [
     icon: require("./places_icons/PontPietonBlueCircleWEB.svg"),
     thumbnail: require("./places_photographs/og/pedestrian bridge.jpg"),
     photos: [
-      require("./places_photographs/basilica.JPG"),
-      require("./places_photographs/museumLA.jpg")
+      require("./places_photographs/simard-payne park bridge.jpg"),
+      require("./places_photographs/pedestrian bridge1.jpg"),
+      require("./places_photographs/pieton1.jpg")
     ],
     hasContact: false,
     contactField: {
@@ -82,6 +86,24 @@ neighborhood was full of large families always having the desire to celebrate.`,
     coordinates: { lat: `44.090029`, lng: `-70.218838` },
     icon: require("./places_icons/LittleCanadaBlueCircleWEB.svg"),
     thumbnail: require("./places_photographs/og/little canada.JPG"),
+    photos: [require("./places_photographs/little canada.JPG")],
+    hasContact: false,
+    contactField: {
+      type: "",
+      contact: ""
+    }
+  },
+  {
+    key: 5.6,
+    name: `New Auburn`,
+    shortDesc: `The Barker Mill was a catalyst for the residential...`,
+    longDesc: `The Barker Mill was a catalyst for the residential development of what became known as “New Auburn.”
+New Auburns’ proximity to Lewiston, specifically Little Canada, prompted the building of the “South
+Bridge” (renamed Lown Peace Bridge) which offered additional employment opportunities and
+connections to a growing Franco-American community.`,
+    coordinates: { lat: `44.087287`, lng: `-70.223293` },
+    icon: require("./places_icons/FleurDeLisYellowIconWEB.svg"),
+    thumbnail: require("./places_photographs/og/little canada.JPG"),
     photos: [
       require("./places_photographs/basilica.JPG"),
       require("./places_photographs/museumLA.jpg")
@@ -95,14 +117,15 @@ neighborhood was full of large families always having the desire to celebrate.`,
   {
     key: 6,
     name: `The Great Falls`,
-    shortDesc: `these falls are the perfect picture between industry and nature...`,
-    longDesc: `Les Chutes (Great Falls). It will make your Instagram followers jealous; these falls are the perfect picture between industry and nature. Admire the strength of the water that has fueled the economy of these cities.`,
+    shortDesc: `These falls are the perfect picture between industry and nature...`,
+    longDesc: `These falls are the perfect picture between industry and nature. Admire the strength of the water that has fueled the economy of these cities.`,
     coordinates: { lat: `44.099793`, lng: `-70.222612` },
     icon: require("./places_icons/WaterfallIconWEB.svg"),
     thumbnail: require("./places_photographs/falls.jpg"),
     photos: [
-      require("./places_photographs/basilica.JPG"),
-      require("./places_photographs/museumLA.jpg")
+      require("./places_photographs/falls.jpg"),
+      require("./places_photographs/Great Falls-5.jpg"),
+      require("./places_photographs/Great Falls-6.JPG")
     ],
     hasContact: false,
     contactField: {
@@ -118,10 +141,7 @@ neighborhood was full of large families always having the desire to celebrate.`,
     coordinates: { lat: `44.076168`, lng: `-70.171580` },
     icon: require("./places_icons/USMLACBlueCircleWEB.svg"),
     thumbnail: require("./places_photographs/og/usm franco collection.jpg"),
-    photos: [
-      require("./places_photographs/basilica.JPG"),
-      require("./places_photographs/museumLA.jpg")
-    ],
+    photos: [],
     hasContact: true,
     contactField: {
       type: "Website",

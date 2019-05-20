@@ -1,13 +1,13 @@
 import React from "react";
-import { Row, Col } from "react-simple-flex-grid";
+import { Row, Col } from "react-simple-flex-grid"; import "react-simple-flex-grid/lib/main.css";
 import "./style.css";
 const Partners_Logo = [
   require("../../../resources/partners/museumLA.jpg"),
   require("../../../resources/partners/GFC.jpg"),
 
-  require("../../../resources/partners/basilica.jpg"),
   require("../../../resources/partners/Chamber.png"),
-  require("../../../resources/partners/FAC.jpg")
+  require("../../../resources/partners/FAC.jpg"),
+  require("../../../resources/partners/basilica.jpg")
 ];
 
 class SimpleAppBar extends React.Component {
@@ -36,7 +36,7 @@ class SimpleAppBar extends React.Component {
 
   render() {
     return (
-      <Col span={10} style={{ margin: "20px" }}>
+      <Col span={12} style={{ padding: "20px" }}>
         <Row className="PartnersTitleContainer">
           <p className="PartnersTitle">Our Partners</p>
         </Row>

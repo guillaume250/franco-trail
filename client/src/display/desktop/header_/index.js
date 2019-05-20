@@ -2,7 +2,7 @@ import React from "react";
 import { Col } from "react-simple-flex-grid";
 import SmoothScroll from "smooth-scroll";
 import "animate.css";
-import logo from "../../../resources/header_images/f0.png";
+import logo from "../../../resources/header_images/f1.png";
 import arrowDown from "./arrow-down.png";
 import "./style.css";
 class App extends React.Component {
@@ -21,9 +21,14 @@ class App extends React.Component {
     return (
       <div className="parentX animated fadeIn">
         <div className="child1">
-          <h1 id="headline" className="animated fadeIn delay-1s">
+          {/*}<h1 id="headline" className="animated fadeIn delay-1s">
             The Franco Trail L-A
-          </h1>
+          </h1>*/}
+          <img
+            className="image animated fadeIn delay-1s"
+            alt="The Franco Trail L-A"
+            src={logo}
+          />
           <div id="subtitle" className="animated fadeIn delay-2s">
             Celebrating French Heritage
           </div>

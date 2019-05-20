@@ -10,8 +10,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Desktop />
-        {/*
         <MediaQuery query="(min-width: 1291px)">
           <Desktop />
         </MediaQuery>
@@ -23,7 +21,7 @@ class App extends Component {
         </MediaQuery>
         <MediaQuery query="(max-width: 767px) and (orientation: portrait)">
           <Mobile />
-        </MediaQuery>*/}
+        </MediaQuery>
       </div>
     );
   }

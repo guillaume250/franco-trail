@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-simple-flex-grid";
+import { Row, Col } from "react-simple-flex-grid"; import "react-simple-flex-grid/lib/main.css";
 import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
 import { showAttraction_, hideAttraction_ } from "./actions";
@@ -9,7 +9,7 @@ import Switch from "@material-ui/core/Switch";
 import Paper from "@material-ui/core/Paper";
 import GridList from "@material-ui/core/GridList";
 import Checkbox from "@material-ui/core/Checkbox";
-
+import MapControlButtons from "./mapControls";
 import List from "./list";
 import Alert from "../../../components/alert";
 
@@ -91,53 +91,7 @@ class App extends Component {
               </GridList>
             </Paper>
           </Row>
-
-          <Row>
-            <Paper elevation={4} style={styles.control_buttons}>
-              <Row>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={this.state.showhistorical}
-                      onChange={this.handleshowhistorical}
-                      value={this.state.showhistorical}
-                      color="primary"
-                    />
-                  }
-                  label={"Show historical attractions"}
-                />
-              </Row>
-
-              <Row>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={this.state.ShowOtherPlaces}
-                      onChange={this.handleShowOtherPlaces}
-                      value={this.state.ShowOtherPlaces}
-                      color="primary"
-                    />
-                  }
-                  label="Show Restaurants, parkings, hotels and other businesses"
-                />
-              </Row>
-
-              <Row>
-                <FormControlLabel
-                  style={{ color: "white", marginLeft: "0" }}
-                  control={
-                    <Checkbox
-                      checked={this.state.showMyLocation}
-                      onChange={this.handleMyLocation}
-                      value={"My location"}
-                      color="primary"
-                    />
-                  }
-                  label="Show my location"
-                />
-              </Row>
-            </Paper>
-          </Row>
+          <MapControlButtons />
         </Col>
         <Alert
           open={this.state.IsOutbound}
@@ -180,26 +134,29 @@ const styles = {
   attractions_container: {
     margin: "5px",
     padding: "10px",
-    backgroundColor: "#ece070",
+    backgroundColor: "#5B95F3",
     flex: "1"
   },
   main_attractions_title: {
+    marginBottom: "10px",
     padding: "35px",
-    color: "black",
-    fontSize: 22,
-    fontWeight: 900,
-    fontFamily: "'Signika', sans-serif"
+    color: "white",
+    fontSize: 32,
+    fontWeight: 400,
+    fontFamily: "'Pacifico', cursive",
+    textDecoration: "underline"
   },
   main_attractions: {
+    opacity: 1,
+    color: "white",
     flex: "1",
-    backgroundColor: "#ece070",
+    backgroundColor: "#5B95F3",
     padding: "10px",
     height: "45vh",
     overflowY: "scroll"
   },
   control_buttons: {
     marginTop: "10px",
-
     margin: "5px",
     flex: "1",
     backgroundColor: "#D7E4F4",

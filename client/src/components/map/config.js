@@ -13,7 +13,7 @@ export const defaut_Settings = {
     lat: 44.0949288,
     lng: -70.2230216
   },
-  zoom: 15.4
+  zoom: 15.6
 };
 
 const mapConfig = {
@@ -118,8 +118,8 @@ const mapConfig = {
       //   lng: -70.220019
       // }; // A test inbound Position
       const MyPosition = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
+        lat: 44.093075,
+        lng: -70.220019
       };
       if (map.getBounds().contains(MyPosition)) {
         let marker = new maps.Marker({

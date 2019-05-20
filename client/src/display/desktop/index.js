@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-simple-flex-grid";
+import { Row, Col } from "react-simple-flex-grid"; import "react-simple-flex-grid/lib/main.css";
 import "react-simple-flex-grid/lib/main.css";
 import "./index.css";
 import { connect } from "react-redux";

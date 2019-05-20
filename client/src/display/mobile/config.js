@@ -5,7 +5,7 @@ const mapConfig = {
     lat: 44.0960371,
     lng: -70.2214903
   },
-  zoom: 15,
+  zoom: 14.6,
   setStyle: function(map) {},
   mapStyle: {
     styles: standard0,
@@ -13,7 +13,7 @@ const mapConfig = {
     maxZoom: 17
   },
   mapContainer: {
-    height: "60vh",
+    height: "50vh",
     width: "100%",
     alignItems: "center",
     justifyContent: "center"

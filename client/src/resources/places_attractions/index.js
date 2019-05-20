@@ -1,5 +1,5 @@
-import icon from "./icon.svg";
-import ico5 from "./ico10.png";
+import icon from "./icons/icon.svg";
+import ico5 from "./icons/ico10.png";
 
 const attractions = [
   {

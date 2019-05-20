@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import Carousel from "../../components/carousel";
 import Map from "../../components/map";
-
+import Partners from "../desktop/partners";
+import Footer from "../desktop/footer";
+import { Row, Col } from "react-simple-flex-grid"; import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
 
 class App extends Component {
@@ -24,6 +26,12 @@ class App extends Component {
           <Map viewConfig={this.props.mapConfig_Mobile} />
           <Carousel />
         </div>
+        <Row>
+          <Partners />
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
       </div>
     );
   }

@@ -46,7 +46,7 @@ class AlignItemsList extends React.Component {
               <ListItemAvatar>
                 <Avatar alt={place.name} src={place.icon} />
               </ListItemAvatar>
-              <ListItemText secondary={place.name} />
+              <p className="listMe">{place.name}</p>
             </ListItem>
           ))}
         </List>
