@@ -145,7 +145,7 @@ const mapConfig = {
       } else {
         callback(
           false,
-          "App failed to retrieve the location of the device. Please Check your internet Connection"
+          "App failed to retrieve the location of the device. Please Check your internet Connection and Location Permissions"
         );
       }
     }

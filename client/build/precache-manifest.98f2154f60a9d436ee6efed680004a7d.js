@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/1franco center.40747449.jpg"
   },
   {
-    "revision": "553d0581c67e9c87fc85",
+    "revision": "d12da6903879c276065a",
     "url": "/static/css/main.74d40163.chunk.css"
   },
   {
@@ -92,8 +92,8 @@ self.__precacheManifest = [
     "url": "/static/media/gendron-2.9a28565e.jpg"
   },
   {
-    "revision": "553d0581c67e9c87fc85",
-    "url": "/static/js/main.e4908329.chunk.js"
+    "revision": "d12da6903879c276065a",
+    "url": "/static/js/main.51d03d53.chunk.js"
   },
   {
     "revision": "32e5c0a836b394d750b06bc94a510fd1",
@@ -180,7 +180,7 @@ self.__precacheManifest = [
     "url": "/static/css/2.9d14aa89.chunk.css"
   },
   {
-    "revision": "4b2b79c6543c7f509ab5fc67a599bbc7",
+    "revision": "58a2bcde49ec2699197fe086bb166151",
     "url": "/index.html"
   }
 ];
