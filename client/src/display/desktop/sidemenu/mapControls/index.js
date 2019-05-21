@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-simple-flex-grid"; import "react-simple-flex-grid/lib/main.css";
+import { Row, Col } from "react-simple-flex-grid";
+import "react-simple-flex-grid/lib/main.css";
 import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
 import { showAttraction_, hideAttraction_ } from "../actions";
@@ -21,7 +22,8 @@ class App extends Component {
       ShowOtherPlaces: false,
       showMyLocation: false,
       showhistorical: false,
-      IsOutbound: false
+      IsOutbound: false,
+      alertMessage: ""
     };
   }
   handleCloseAlert = () => {
@@ -63,15 +65,16 @@ class App extends Component {
     }
   };
   handleMyLocation = (e, data) => {
-    const openAlert = () => {
+    const openAlert = message => {
+      this.setState({ alertMessage: message });
       this.setState({ IsOutbound: true }); //alert("You are not inbound");
-      this.setState({ showMyLocation: false });
+      this.setState({ showMyLocation: false }); //Checkbox
       this.props.zoomOut();
     };
 
-    this.props.showMyLocation(function(isInbound) {
+    this.props.showMyLocation(function(isInbound, message) {
       if (!isInbound) {
-        openAlert();
+        openAlert(message);
       }
     });
     this.setState({ showMyLocation: true });
@@ -127,11 +130,9 @@ class App extends Component {
           <Alert
             open={this.state.IsOutbound}
             CloseIt={this.handleCloseAlert}
-            title={"User not on the trail"}
-            message={"You are not in Franco Trail Area"}
-            explanations={
-              "You need to be on the trail (or closeby) to view your location"
-            }
+            title={"Franco Trail L-A"}
+            message={this.state.alertMessage}
+            explanations={" "}
           />
         </Paper>
       </div>

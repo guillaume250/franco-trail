@@ -22,11 +22,8 @@ class Popup extends React.Component {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-slide-description">
-              <p>
-                {this.props.message}
-                {". "}
-                {this.props.explanations}
-              </p>
+              {this.props.message}
+              {/*this.props.explanations*/}
             </DialogContentText>
           </DialogContent>
           <DialogActions>

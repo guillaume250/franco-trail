@@ -116,21 +116,48 @@ const mapConfig = {
     const currentState = store.getState();
     map = currentState.mapConfig.mapObject;
     maps = currentState.mapConfig.mapsObject;
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 15000,
+      maximumAge: 0
+    };
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      console.log("Geolocation is not supported by this browser.");
+    function error(err) {
+      if (err.code === 0) {
+        callback(
+          false,
+          "App failed to retrieve the location of the device due to an unknown error."
+        );
+      } else if (err.code === 1) {
+        callback(
+          false,
+          "App failed to retrieve the location because location permission was denied."
+        );
+      }
+      if (err.code === 2) {
+        callback(false, "The location of your device could not be determined.");
+      }
+      if (err.code === 3) {
+        callback(
+          false,
+          "App is taking too long to retrieve the location of you device. Please refresh your app."
+        );
+      } else {
+        callback(
+          false,
+          "App failed to retrieve the location of the device. Please Check your internet Connection"
+        );
+      }
     }
     function showPosition(position) {
-      // const myInPosition = {
+      const MyPosition = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      // const MyPosition = {
       //   lat: 44.093075,
       //   lng: -70.220019
-      // }; // A test inbound Position
-      const MyPosition = {
-        lat: 44.093075,
-        lng: -70.220019
-      };
+      // };
       if (map.getBounds().contains(MyPosition)) {
         let marker = new maps.Marker({
           position: MyPosition,
@@ -143,8 +170,16 @@ const mapConfig = {
         map.panTo(marker.getPosition());
         callback(true);
       } else {
-        callback(false);
+        callback(
+          false,
+          "You are not in Franco Trail Area. You need to be on the trail (or closeby) to view your location"
+        );
       }
+    }
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, error, options);
+    } else {
+      callback(false, "Geolocation is not supported by this device.");
     }
   }
 };
