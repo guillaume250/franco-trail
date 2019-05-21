@@ -14,8 +14,8 @@ class App extends Component {
         <Header />
         <div style={styles.body}>
           <Map viewConfig={this.props.mapConfig_Mobile} />
-          {/*<MapControlButtons />*/}
-          <Carousel />
+          <MapControlButtons />
+          {/*<Carousel />*/}
         </div>
       </div>
     );
