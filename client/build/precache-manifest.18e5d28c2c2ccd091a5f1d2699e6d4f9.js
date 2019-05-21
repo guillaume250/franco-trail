@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "bbded5c963cad2d6070f5d8b99ea09ec",
-    "url": "/static/media/gendron-0.bbded5c9.jpg"
+    "revision": "407474498b13a75d884b8d648b9c3f00",
+    "url": "/static/media/1franco center.40747449.jpg"
   },
   {
-    "revision": "162e826c3d4488fe742d",
-    "url": "/static/css/main.3efc58c1.chunk.css"
+    "revision": "b4527bc9cd760dc29a15",
+    "url": "/static/css/main.62456012.chunk.css"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -16,32 +16,28 @@ self.__precacheManifest = [
     "url": "/static/media/title.5bb8501b.png"
   },
   {
-    "revision": "afbe1b903e11bd56059a",
-    "url": "/static/js/2.3ea009b9.chunk.js"
+    "revision": "bf1a8c3c22df64ce8309",
+    "url": "/static/js/2.43ad7aa8.chunk.js"
   },
   {
     "revision": "6822d55f9d9121eb3913107dcb9e40c7",
     "url": "/static/media/f1.6822d55f.png"
   },
   {
-    "revision": "3e758695520e44f897e8f066c308cdb3",
-    "url": "/static/media/basilica.3e758695.JPG"
-  },
-  {
-    "revision": "1dccc967c68abb71a10d4ee30a14e131",
-    "url": "/static/media/little canada.1dccc967.JPG"
+    "revision": "03f5229ac564dba29d558beac3a06357",
+    "url": "/static/media/New Auburn.03f5229a.PNG"
   },
   {
     "revision": "78278ac3352c98d6eb53fb30aec6bcd2",
     "url": "/static/media/falls.78278ac3.jpg"
   },
   {
-    "revision": "cbb1918cf47b0b4a4a127fa1767971b6",
-    "url": "/static/media/icon.cbb1918c.svg"
-  },
-  {
     "revision": "90adf8607df70181534752d45123a8ba",
     "url": "/static/media/BasilicaInBlueCircleWEB.90adf860.svg"
+  },
+  {
+    "revision": "3e758695520e44f897e8f066c308cdb3",
+    "url": "/static/media/basilica.3e758695.JPG"
   },
   {
     "revision": "b47037bd84afd90d4e4f36b3bbd45080",
@@ -84,20 +80,20 @@ self.__precacheManifest = [
     "url": "/static/media/franco center.9a28565e.jpg"
   },
   {
-    "revision": "162e826c3d4488fe742d",
-    "url": "/static/js/main.616a7034.chunk.js"
+    "revision": "bbded5c963cad2d6070f5d8b99ea09ec",
+    "url": "/static/media/gendron-0.bbded5c9.jpg"
   },
   {
     "revision": "9a28565ecc29f6d3a1d65f3221fc31cb",
     "url": "/static/media/gendron-2.9a28565e.jpg"
   },
   {
-    "revision": "407474498b13a75d884b8d648b9c3f00",
-    "url": "/static/media/1franco center.40747449.jpg"
+    "revision": "b4527bc9cd760dc29a15",
+    "url": "/static/js/main.8d8449ff.chunk.js"
   },
   {
-    "revision": "2829c8cb884b3d67df067546d82a2ccc",
-    "url": "/static/media/PontPietonBlueCircleWEB.2829c8cb.svg"
+    "revision": "32e5c0a836b394d750b06bc94a510fd1",
+    "url": "/static/media/TrestleBridgeCartoon.32e5c0a8.svg"
   },
   {
     "revision": "44ede1f2ab724cc6d9e5b690d9faa5a3",
@@ -116,16 +112,24 @@ self.__precacheManifest = [
     "url": "/static/media/pieton1.ac58b659.jpg"
   },
   {
-    "revision": "f8983f8ff8fe31a35f2e649f0df5603a",
-    "url": "/static/media/LittleCanadaBlueCircleWEB.f8983f8f.svg"
+    "revision": "b5e7c49e2ebf5124951cbb78a8401761",
+    "url": "/static/media/FleurDeLisBlueIcon.b5e7c49e.svg"
+  },
+  {
+    "revision": "1dccc967c68abb71a10d4ee30a14e131",
+    "url": "/static/media/little canada.1dccc967.JPG"
   },
   {
     "revision": "9cceac39a7eeac814f0bc48ce5b2f2b0",
     "url": "/static/media/FleurDeLisYellowIconWEB.9cceac39.svg"
   },
   {
-    "revision": "1188ece63adaf759705d81a65a44a4f4",
-    "url": "/static/media/museumLA.1188ece6.jpg"
+    "revision": "6984dd4cf32c79cb7fa9d6341b506ca2",
+    "url": "/static/media/New auburn1.6984dd4c.PNG"
+  },
+  {
+    "revision": "39fcd4a280926dadd33971d000fdc976",
+    "url": "/static/media/New auburn2.39fcd4a2.PNG"
   },
   {
     "revision": "4a7d5d88aa8d148814e5e47a42abc322",
@@ -142,6 +146,10 @@ self.__precacheManifest = [
   {
     "revision": "2b19effb3c7f30fae00bdbbfae370352",
     "url": "/static/media/USMLACBlueCircleWEB.2b19effb.svg"
+  },
+  {
+    "revision": "cbb1918cf47b0b4a4a127fa1767971b6",
+    "url": "/static/media/icon.cbb1918c.svg"
   },
   {
     "revision": "281ee6c9988c3126e5231a413b4a3e6b",
@@ -164,11 +172,11 @@ self.__precacheManifest = [
     "url": "/static/media/basilica.cc051545.jpg"
   },
   {
-    "revision": "afbe1b903e11bd56059a",
+    "revision": "bf1a8c3c22df64ce8309",
     "url": "/static/css/2.9d14aa89.chunk.css"
   },
   {
-    "revision": "477a942adbb86b6b47045256dabec7fe",
+    "revision": "24d91313e060773478f430517129cbd2",
     "url": "/index.html"
   }
 ];

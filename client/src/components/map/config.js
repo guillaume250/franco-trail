@@ -13,7 +13,7 @@ export const defaut_Settings = {
     lat: 44.0949288,
     lng: -70.2230216
   },
-  zoom: 15.6
+  zoom: 15.4
 };
 
 const mapConfig = {
@@ -64,6 +64,16 @@ const mapConfig = {
         zIndex: attraction.key,
         title: attraction.name,
         icon: attraction.icon
+      });
+      let i1 = new maps.InfoWindow({
+        content: attraction.name + ": " + attraction.Description
+      });
+
+      marker.addListener("click", function() {
+        map.setZoom(17);
+        map.panTo(marker.getPosition());
+        //console.log(place);
+        i1.open(map, marker);
       });
       Markers.push(marker);
     });

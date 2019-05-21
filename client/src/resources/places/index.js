@@ -60,11 +60,11 @@ const places = [
 
   {
     key: 4,
-    name: `Le Pont-Piéton`,
+    name: `The foot bridge`,
     shortDesc: `A symbol of collaboration between the two sister...`,
     longDesc: `Le Pont-Piéton. A symbol of collaboration between the two sister cities, a paved path follows the perimeter of the park, crossing the pedestrian bridge, formerly a railway bridge, and leads to Bonney Park in Auburn.`,
     coordinates: { lat: `44.092621`, lng: `-70.224027` },
-    icon: require("./places_icons/PontPietonBlueCircleWEB.svg"),
+    icon: require("./places_icons/TrestleBridgeCartoon.svg"),
     thumbnail: require("./places_photographs/og/pedestrian bridge.jpg"),
     photos: [
       require("./places_photographs/simard-payne park bridge.jpg"),
@@ -84,7 +84,7 @@ const places = [
     longDesc: `Little Canada. Built between 1866 and 1916, in order to accommodate the influx of French-Canadian immigrants, this
 neighborhood was full of large families always having the desire to celebrate.`,
     coordinates: { lat: `44.090029`, lng: `-70.218838` },
-    icon: require("./places_icons/LittleCanadaBlueCircleWEB.svg"),
+    icon: require("./places_icons/FleurDeLisBlueIcon.svg"),
     thumbnail: require("./places_photographs/og/little canada.JPG"),
     photos: [require("./places_photographs/little canada.JPG")],
     hasContact: false,
@@ -103,10 +103,11 @@ Bridge” (renamed Lown Peace Bridge) which offered additional employment opport
 connections to a growing Franco-American community.`,
     coordinates: { lat: `44.087287`, lng: `-70.223293` },
     icon: require("./places_icons/FleurDeLisYellowIconWEB.svg"),
-    thumbnail: require("./places_photographs/og/little canada.JPG"),
+    thumbnail: require("./places_photographs/New Auburn.PNG"),
     photos: [
-      require("./places_photographs/basilica.JPG"),
-      require("./places_photographs/museumLA.jpg")
+      require("./places_photographs/New Auburn.PNG"),
+      require("./places_photographs/New auburn1.PNG"),
+      require("./places_photographs/New auburn2.PNG")
     ],
     hasContact: false,
     contactField: {
