@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/header";
 import Carousel from "../../components/carousel";
 import Map from "../../components/map";
-import MapControlButtons from "../../display/desktop/sidemenu/mapControls";
+import MapControlButtons from "./mapControls";
 
 import { Row, Col } from "react-simple-flex-grid";
 import { connect } from "react-redux";
@@ -15,7 +15,7 @@ class App extends Component {
         <div style={styles.body}>
           <Map viewConfig={this.props.mapConfig_Mobile} />
           <MapControlButtons />
-          {/*<Carousel />*/}
+          <Carousel />
         </div>
       </div>
     );

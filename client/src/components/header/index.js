@@ -39,7 +39,7 @@ class SimpleAppBar extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <div className="">
+            <div className="LogoTitleIMGMobo">
               <img src={TitleImage} className="Logoresponsive" alt="Logo" />
             </div>
           </Toolbar>

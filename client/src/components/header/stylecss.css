@@ -11,3 +11,9 @@
   flex-grow: 1;
   align-content: flex-start;
 }
+.LogoTitleIMGMobo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

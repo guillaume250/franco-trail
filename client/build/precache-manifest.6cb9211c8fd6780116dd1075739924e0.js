@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/1franco center.40747449.jpg"
   },
   {
-    "revision": "d12da6903879c276065a",
-    "url": "/static/css/main.74d40163.chunk.css"
+    "revision": "b478b9e1b98e569b6067",
+    "url": "/static/css/main.223023b8.chunk.css"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/static/media/title.5bb8501b.png"
   },
   {
-    "revision": "8fb7b934ecfbc82fb738",
-    "url": "/static/js/2.846e3d0f.chunk.js"
+    "revision": "c77c4bdf2572ef58092a",
+    "url": "/static/js/2.e419db19.chunk.js"
   },
   {
     "revision": "6822d55f9d9121eb3913107dcb9e40c7",
@@ -92,8 +92,8 @@ self.__precacheManifest = [
     "url": "/static/media/gendron-2.9a28565e.jpg"
   },
   {
-    "revision": "d12da6903879c276065a",
-    "url": "/static/js/main.51d03d53.chunk.js"
+    "revision": "b478b9e1b98e569b6067",
+    "url": "/static/js/main.23a745f0.chunk.js"
   },
   {
     "revision": "32e5c0a836b394d750b06bc94a510fd1",
@@ -176,11 +176,11 @@ self.__precacheManifest = [
     "url": "/static/media/basilica.cc051545.jpg"
   },
   {
-    "revision": "8fb7b934ecfbc82fb738",
+    "revision": "c77c4bdf2572ef58092a",
     "url": "/static/css/2.9d14aa89.chunk.css"
   },
   {
-    "revision": "58a2bcde49ec2699197fe086bb166151",
+    "revision": "0385653987a8898cb4095c5c7dd6ddd7",
     "url": "/index.html"
   }
 ];
