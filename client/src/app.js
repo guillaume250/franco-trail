@@ -14,7 +14,7 @@ class App extends Component {
           <Desktop />
         </MediaQuery>
         <MediaQuery query="(min-width: 768px) and (max-width: 1290px)">
-          <Tablet />
+          <Desktop />
         </MediaQuery>
         <MediaQuery query="(max-width: 767px) and (orientation: landscape)">
           <Mobile />
