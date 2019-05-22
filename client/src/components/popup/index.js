@@ -49,9 +49,21 @@ class Popup extends React.Component {
 
               <div className="popContent">{this.props.data.longDesc}</div>
               <div className="popContactField">
-                <a href={this.props.data.contactField.contact} target="_blank">
+                <p>
                   {this.props.data.contactField.type}
-                </a>
+                  {": "}
+                  <a
+                    href={this.props.data.contactField.contact}
+                    target="_blank"
+                  >
+                    {this.props.data.contactField.Label}
+                  </a>
+                </p>
+                <p>
+                  {this.props.data.addressField.type}
+                  {": "}
+                  {this.props.data.addressField.contact}
+                </p>
               </div>
             </DialogContent>
             <DialogActions>

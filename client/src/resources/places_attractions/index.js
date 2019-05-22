@@ -103,49 +103,49 @@ the mills.`,
     key: 14,
     name: `Le Messager`,
     Description: `Headquarters of French-language newspaper published from 1880 to 1968. Source of information on activities in the French community, it urged Francos to become active in city’s politics.`,
-    coordinates: { lat: 44.095212, lng: -70.219168 },
+    coordinates: { lat: 44.094909, lng: -70.216393 },
     icon: ico5
   },
   {
     key: 15,
     name: `Healy Asylum`,
     Description: `Founded in 1892, the Healy Asylum was named for Maine’s second Catholic bishop. The orphanage was founded and operated by the Gray nuns, who conducted school here for their charges.`,
-    coordinates: { lat: 44.095212, lng: -70.219168 },
+    coordinates: { lat: 44.097064, lng: -70.214006 },
     icon: ico5
   },
   {
     key: 16,
     name: `F.X. Marcotte`,
     Description: `Established in 1889, Francois X. Marcotte prospered by serving new immigrants. He was also prominent in catholic parish, making significant donations to the Gray Nuns.`,
-    coordinates: { lat: 44.095212, lng: -70.219168 },
+    coordinates: { lat: 44.093815, lng: -70.217676 },
     icon: ico5
   },
   {
     key: 17,
     name: `Grand Trunk Railroad Station`,
     Description: `The Lewiston-Auburn railroad linked downtown Lewiston with the Canadian National Railway line between Portland and Montreal, which facilited immigration to this area after 1874. Built in 1885, this station was considered the “Ellis Island” of the city.`,
-    coordinates: { lat: 44.095212, lng: -70.219168 },
+    coordinates: { lat: 44.094189, lng: -70.219132 },
     icon: ico5
   },
   {
     key: 18,
     name: `A.A. Garcelon House`,
     Description: `Built in 1890 as the private residence of a prominent local businessman, this was the house of Mr Arthur A. Garcelon; a merchant of French Canadian extraction who operated a grocery supplier.`,
-    coordinates: { lat: 44.095212, lng: -70.219168 },
+    coordinates: { lat: 44.093912, lng: -70.227008 },
     icon: ico5
   },
   {
     key: 19,
     name: `Maine Franco American Genealogical Society`,
     Description: `Maine Franco-American Genealogical Society is primarily a self-help genealogical research library.`,
-    coordinates: { lat: 44.095212, lng: -70.219168 },
+    coordinates: { lat: 44.1031, lng: -70.226837 },
     icon: ico5
   },
   {
     key: 20,
     name: `Art Wall`,
     Description: `The purpose of the Art Wall in its current form is to beautify the retaining wall on Main Street through a display of art.  Coming from a competition of local artists, his canvases improve the environment of the community.`,
-    coordinates: { lat: 44.095212, lng: -70.219168 },
+    coordinates: { lat: 44.090262, lng: -70.226098 },
     icon: ico5
   }
 ];

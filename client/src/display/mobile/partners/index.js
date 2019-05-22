@@ -16,29 +16,6 @@ const Partners_Logo = [
 ];
 
 class SimpleAppBar extends React.Component {
-  // componentDidMount() {
-  //   (function() {
-  //     ///Carousel Scroll horizontal on mousewheel move
-  //     var carousel = document.getElementById("scrollLeftX");
-  //     function scrollHorizontally(e) {
-  //       e = window.event || e;
-  //       var delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
-  //       carousel.scrollLeft -= delta * 40; // Multiplied by 40
-  //       carousel.scrollLeft -= delta * 40; // Multiplied by 40
-  //       e.preventDefault();
-  //     }
-  //     if (carousel.addEventListener) {
-  //       // IE9, Chrome, Safari, Opera
-  //       carousel.addEventListener("mousewheel", scrollHorizontally, false);
-  //       // Firefox
-  //       carousel.addEventListener("DOMMouseScroll", scrollHorizontally, false);
-  //     } else {
-  //       // IE 6/7/8
-  //       carousel.attachEvent("onmousewheel", scrollHorizontally);
-  //     }
-  //   })();
-  // }
-
   render() {
     return (
       <Col span={12} style={{ padding: "20px" }}>

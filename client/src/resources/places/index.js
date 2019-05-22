@@ -16,7 +16,12 @@ const places = [
     hasContact: true,
     contactField: {
       type: "Website",
-      contact: "https://princeofpeace.me/"
+      contact: "https://princeofpeace.me/",
+      Label: "www.princeofpeace.me"
+    },
+    addressField: {
+      type: "Address",
+      contact: "122 Ash Street, Lewiston, ME"
     }
   },
   {
@@ -35,7 +40,12 @@ const places = [
     hasContact: true,
     contactField: {
       type: "Website",
-      contact: "https://www.museumla.org/"
+      contact: "https://www.museumla.org/",
+      Label: "www.museumla.org"
+    },
+    addressField: {
+      type: "Address",
+      contact: "35 Canal Street, Box A7 Lewiston, ME"
     }
   },
   {
@@ -47,14 +57,19 @@ const places = [
     icon: require("./places_icons/FrancoCenterIconOneWEB.svg"),
     thumbnail: require("./places_photographs/og/franco center.jpg"),
     photos: [
-      require("./places_photographs/gendron-0.jpg"),
       require("./places_photographs/gendron-2.jpg"),
-      require("./places_photographs/1franco center.jpg")
+      require("./places_photographs/1franco center.jpg"),
+      require("./places_photographs/gendron-0.jpg")
     ],
     hasContact: true,
     contactField: {
       type: "Website",
-      contact: "http://www.francocenter.org/"
+      contact: "http://www.francocenter.org/",
+      Label: "www.francocenter.org"
+    },
+    addressField: {
+      type: "Address",
+      contact: "46 Cedar Street Lewiston, ME 04240"
     }
   },
 
@@ -74,6 +89,11 @@ const places = [
     hasContact: false,
     contactField: {
       type: "",
+      contact: "",
+      Label: ""
+    },
+    addressField: {
+      type: "",
       contact: ""
     }
   },
@@ -89,6 +109,11 @@ neighborhood was full of large families always having the desire to celebrate.`,
     photos: [require("./places_photographs/little canada.JPG")],
     hasContact: false,
     contactField: {
+      type: "",
+      contact: "",
+      Label: ""
+    },
+    addressField: {
       type: "",
       contact: ""
     }
@@ -112,6 +137,11 @@ connections to a growing Franco-American community.`,
     hasContact: false,
     contactField: {
       type: "",
+      contact: "",
+      Label: ""
+    },
+    addressField: {
+      type: "",
       contact: ""
     }
   },
@@ -121,7 +151,7 @@ connections to a growing Franco-American community.`,
     shortDesc: `These falls are the perfect picture between industry and nature...`,
     longDesc: `These falls are the perfect picture between industry and nature. Admire the strength of the water that has fueled the economy of these cities.`,
     coordinates: { lat: `44.099793`, lng: `-70.222612` },
-    icon: require("./places_icons/WaterfallIconWEB.svg"),
+    icon: require("./places_icons/WaterfallIconCartoonWEB.svg"),
     thumbnail: require("./places_photographs/falls.jpg"),
     photos: [
       require("./places_photographs/falls.jpg"),
@@ -130,6 +160,11 @@ connections to a growing Franco-American community.`,
     ],
     hasContact: false,
     contactField: {
+      type: "",
+      contact: "",
+      Label: ""
+    },
+    addressField: {
       type: "",
       contact: ""
     }
@@ -146,7 +181,12 @@ connections to a growing Franco-American community.`,
     hasContact: true,
     contactField: {
       type: "Website",
-      contact: "https://usm.maine.edu/franco"
+      contact: "https://usm.maine.edu/franco",
+      Label: "www.usm.maine.edu/franco"
+    },
+    addressField: {
+      type: "Address",
+      contact: "51 Westminster Street, Lewiston. Room 171"
     }
   }
 ];

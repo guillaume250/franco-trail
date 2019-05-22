@@ -17,3 +17,16 @@
   align-items: center;
   align-content: center;
 }
+.NavLinks {
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  color: #1b1464;
+  text-decoration: none;
+}
+
+.NavLinks:active {
+  font-size: 18px;
+  font-family: "Ubuntu", sans-serif;
+  color: #1b1464;
+  font-weight: bold;
+}

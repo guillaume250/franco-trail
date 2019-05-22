@@ -1,48 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import MapView from "./mapView";
+import PartnersView from "./partners";
+import ContactsView from "./contactus";
 import Header from "../../components/header";
-import Carousel from "../../components/carousel";
-import Map from "../../components/map";
-import MapControlButtons from "./mapControls";
 
-import { Row, Col } from "react-simple-flex-grid";
-import { connect } from "react-redux";
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <div style={styles.body}>
-          <Map viewConfig={this.props.mapConfig_Mobile} />
-          <MapControlButtons />
-          <Carousel />
-        </div>
-      </div>
-    );
-  }
+function AppRouter() {
+  return (
+    <Router>
+      <Header />
+      <Route path="/" exact component={MapView} />
+      <Route path="/Partners/" component={PartnersView} />
+      <Route path="/Contactus/" component={ContactsView} />
+    </Router>
+  );
 }
 
-const mapStateToProps = state => {
-  const { mapConfig } = state; // the state object comes from Redux store
-  const { mapConfig_Mobile } = state; // the state object comes from Redux store
-
-  return {
-    clickOnMarker: mapConfig.clickOnMarker,
-    mapConfig_Mobile: mapConfig_Mobile
-  };
-};
-export default connect(mapStateToProps)(App);
-
-const styles = {
-  container: {
-    flex: 1
-  },
-
-  body: {
-    flex: 1,
-    flexDirection: "column",
-    paddingLeft: "3%",
-    paddingRight: "3%",
-    marginTop: 70
-  }
-};
+export default AppRouter;

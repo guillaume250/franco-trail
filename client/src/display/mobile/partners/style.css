@@ -1,0 +1,63 @@
+.PartnersTitleContainer {
+  margin-top: 40px;
+  margin-bottom: 10px;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: fixed;
+}
+.PartnersTitle {
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  font-weight: bold;
+}
+.scrolling-wrapper-flexbox1 {
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  width: 98vw;
+  height: 70vh;
+  flex-wrap: wrap;
+  overflow: auto;
+  margin-top: 90px;
+}
+.LogoContainer {
+  /* background-color: #d7e4f4; */
+  height: 180px;
+  margin: 10px;
+  margin-left: 20px;
+  /* filter: blur(1px);
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px); */
+  /* -webkit-box-shadow: 0px 3px 3px -1px rgba(125, 125, 125, 1);
+  -moz-box-shadow: 0px 3px 3px -1px rgba(125, 125, 125, 1);
+  box-shadow: 0px 3px 3px -1px rgba(125, 125, 125, 1); */
+}
+
+/* .LogoContainer:hover {
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+  -webkit-box-shadow: 0px 3px 3px -1px rgba(5, 3, 5, 1);
+  -moz-box-shadow: 0px 3px 3px -1px rgba(5, 3, 5, 1);
+  box-shadow: 0px 3px 3px -1px rgba(5, 3, 5, 1);
+  cursor: pointer;
+} */
+.logo {
+  /* margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%; */
+  /* height: 90%; */
+  /* max-width: 200px; */
+  max-height: 150px;
+}

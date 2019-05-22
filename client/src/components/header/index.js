@@ -11,6 +11,7 @@ import styles from "./styles";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { withStyles } from "@material-ui/core/styles";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./stylecss.css";
 
@@ -53,9 +54,29 @@ class SimpleAppBar extends React.Component {
           />
           <List component="nav" className={classes.root}>
             <img src={TitleImage} className="LogoDrawer" alt="Logo" />
-            <ListItem button>Map</ListItem>
-            <ListItem button>Partners</ListItem>
-            <ListItem button>Contact us</ListItem>
+            <nav>
+              <Link
+                to="/"
+                className="NavLinks"
+                onClick={this.toggleDrawer(false)}
+              >
+                <ListItem button>Map</ListItem>
+              </Link>
+              <Link
+                to="/Partners"
+                className="NavLinks"
+                onClick={this.toggleDrawer(false)}
+              >
+                <ListItem button>Partners</ListItem>
+              </Link>
+              <Link
+                to="/Contactus"
+                className="NavLinks"
+                onClick={this.toggleDrawer(false)}
+              >
+                <ListItem button>Contact us</ListItem>
+              </Link>
+            </nav>
           </List>
           <div style={{ padding: "10px", width: "50vw" }} />
         </Drawer>
