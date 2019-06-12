@@ -33,7 +33,7 @@ const places = [
     icon: require("./places_icons/MuseumLABlueCircleWEB.svg"),
     thumbnail: require("./places_photographs/4.jpg"),
     photos: [
-      require("./places_photographs/IMG_3286.jpg"),
+      require("./places_photographs/IMG_3286_.jpg"),
       require("./places_photographs/2.jpg"),
       require("./places_photographs/KidsMay16IMG_5075.jpg")
     ],
