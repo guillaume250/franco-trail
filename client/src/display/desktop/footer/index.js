@@ -1,6 +1,6 @@
 import React from "react";
-import { Row, Col } from "react-simple-flex-grid"; import "react-simple-flex-grid/lib/main.css";
-import logo from "../../../resources/header_images/title.png";
+import { Col } from "react-simple-flex-grid";
+import "react-simple-flex-grid/lib/main.css";
 import "./styles.css";
 function SimpleAppBar(props) {
   return (

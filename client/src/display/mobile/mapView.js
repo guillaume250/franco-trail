@@ -4,7 +4,6 @@ import Carousel from "../../components/carousel";
 import Map from "../../components/map";
 import MapControlButtons from "./mapControls";
 
-import { Row, Col } from "react-simple-flex-grid";
 import { connect } from "react-redux";
 
 class App extends Component {

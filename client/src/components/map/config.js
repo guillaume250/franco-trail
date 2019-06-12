@@ -5,7 +5,7 @@ import api from "../../config/api";
 import { renderMarkers } from "./markers";
 import { renderTrails } from "./trails";
 import { hideAttractions as renderAttractions } from "../renderAttractions";
-
+//import MyLocationIcon from "../../resources/icons/pulse_dot_small.gif";
 import { standard1, standard2 } from "../../resources/map/styles";
 
 export const defaut_Settings = {
@@ -112,6 +112,13 @@ const mapConfig = {
     map.mapTypes.set("standard1_map", styledMapType);
     map.setMapTypeId("standard1_map");
   },
+  MyPositionMarker: null,
+  removeMarker: function removeMarker(marker) {
+    marker.setPosition(null);
+    marker.setMap(null);
+    //marker = null;
+    console.log(marker);
+  },
   showMyLocation: function getLocation(callback, map, maps) {
     const currentState = store.getState();
     map = currentState.mapConfig.mapObject;
@@ -119,7 +126,7 @@ const mapConfig = {
     const options = {
       enableHighAccuracy: true,
       timeout: 15000,
-      maximumAge: 0
+      maximumAge: 5000
     };
 
     function error(err) {
@@ -155,20 +162,20 @@ const mapConfig = {
         lng: position.coords.longitude
       };
       // const MyPosition = {
-      //   lat: 44.093075,
-      //   lng: -70.220019
+      //   lat: 44.09149,
+      //   lng: -70.219164
       // };
       if (map.getBounds().contains(MyPosition)) {
         let marker = new maps.Marker({
           position: MyPosition,
-          map: map,
-          animation: maps.Animation.DROP,
+          //  map: map,
+          animation: maps.Animation.BOUNCE,
           title: "My Position"
-          //  icon: attraction.icon,
+          //icon: MyLocationIcon
         });
-        map.setZoom(17);
-        map.panTo(marker.getPosition());
-        callback(true);
+        // map.setZoom(17);
+        // map.panTo(marker.getPosition());
+        callback(true, "isInBound", marker);
       } else {
         callback(
           false,

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MediaQuery from "react-responsive";
 import "./app.css";
 import Desktop from "./display/desktop";
-import Tablet from "./display/tablet";
+//import Tablet from "./display/tablet";
 import Mobile from "./display/mobile";
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
           <Desktop />
         </MediaQuery>
         <MediaQuery query="(min-width: 768px) and (max-width: 1290px)">
-          <Desktop />
+          <Mobile />
         </MediaQuery>
         <MediaQuery query="(max-width: 767px) and (orientation: landscape)">
           <Mobile />

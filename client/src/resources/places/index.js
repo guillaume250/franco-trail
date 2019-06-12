@@ -75,7 +75,7 @@ const places = [
 
   {
     key: 4,
-    name: `The foot bridge`,
+    name: `The Foot Bridge`,
     shortDesc: `A symbol of collaboration between the two sister...`,
     longDesc: `Le Pont-Piéton. A symbol of collaboration between the two sister cities, a paved path follows the perimeter of the park, crossing the pedestrian bridge, formerly a railway bridge, and leads to Bonney Park in Auburn.`,
     coordinates: { lat: `44.092621`, lng: `-70.224027` },

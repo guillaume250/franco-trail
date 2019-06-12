@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-simple-flex-grid";
+import { Row } from "react-simple-flex-grid";
 import "react-simple-flex-grid/lib/main.css";
 import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
-import { showAttraction_, hideAttraction_ } from "../actions";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import InputLabel from "@material-ui/core/InputLabel";
 import Switch from "@material-ui/core/Switch";
 import Paper from "@material-ui/core/Paper";
-import GridList from "@material-ui/core/GridList";
 import Checkbox from "@material-ui/core/Checkbox";
 import Alert from "../../../components/alert";
+import {
+  showMyPosition,
+  hideMyPosition
+} from "../../../components/map/actions";
 
 class App extends Component {
   constructor(props) {
@@ -63,19 +64,30 @@ class App extends Component {
     }
   };
   handleMyLocation = (e, data) => {
-    const openAlert = message => {
+    const isNotBound = message => {
       this.setState({ alertMessage: message });
       this.setState({ IsOutbound: true }); //alert("You are not inbound");
       this.setState({ showMyLocation: false }); //Checkbox
       this.props.zoomOut();
     };
-
-    this.props.showMyLocation(function(isInbound, message) {
+    const isInBound = marker => {
+      if (this.state.showMyLocation) {
+        // this.props.removeMarker(marker);
+        this.props.dispatch(hideMyPosition(marker, this.props.mapObject));
+        this.props.zoomOut();
+        this.setState({ showMyLocation: false });
+      } else {
+        this.props.dispatch(showMyPosition(marker, this.props.mapObject));
+        this.setState({ showMyLocation: true });
+      }
+    };
+    this.props.showMyLocation(function(isInbound, message, marker) {
       if (!isInbound) {
-        openAlert(message);
+        isNotBound(message);
+      } else {
+        isInBound(marker);
       }
     });
-    this.setState({ showMyLocation: true });
   };
 
   render() {
@@ -149,6 +161,7 @@ const mapStateToProps = state => {
     ShowOrHide_H_A: mapConfig.ShowOrHide_H_A,
     showMyLocation: mapConfig.showMyLocation,
     getMapObjects: mapConfig.getMapObjects,
+    mapObject: mapConfig.mapObject,
     viewConfig: mapConfig_Desktop
   };
 };

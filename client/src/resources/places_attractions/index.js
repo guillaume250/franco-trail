@@ -1,4 +1,4 @@
-import icon from "./icons/icon.svg";
+//import icon from "./icons/icon.svg";
 import ico5 from "./icons/blackCircle.png";
 
 const attractions = [
@@ -63,7 +63,6 @@ the mills.`,
     coordinates: { lat: 44.144964, lng: -70.202219 },
     icon: ico5
   },
-  ,
   {
     key: 9,
     name: `Androscoggin Mills`,

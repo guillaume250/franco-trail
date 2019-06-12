@@ -3,7 +3,6 @@ import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import "./styles.css";
 class Popup extends React.Component {
@@ -43,7 +42,12 @@ class Popup extends React.Component {
             <DialogContent className="popContentContainer">
               <div id="popupImages" className="popImagesContainer">
                 {this.props.data.photos.map(photo => (
-                  <img src={photo} className="popUpImage" alt="Logo" />
+                  <img
+                    key={photo}
+                    src={photo}
+                    className="popUpImage"
+                    alt="Logo"
+                  />
                 ))}
               </div>
 
@@ -55,6 +59,7 @@ class Popup extends React.Component {
                   <a
                     href={this.props.data.contactField.contact}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {this.props.data.contactField.Label}
                   </a>
@@ -74,7 +79,7 @@ class Popup extends React.Component {
           </Dialog>
         </div>
       );
-      this.scrollHo();
+      //this.scrollHo(); >>> doesn't work on pop horizontal scroll > to be debugged
     } else {
       return null;
     }

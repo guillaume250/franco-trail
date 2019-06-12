@@ -1,41 +1,51 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-simple-flex-grid";
+import { Row } from "react-simple-flex-grid";
 import "react-simple-flex-grid/lib/main.css";
 import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
 import { showAttraction_, hideAttraction_ } from "../actions";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import InputLabel from "@material-ui/core/InputLabel";
 import Switch from "@material-ui/core/Switch";
 import Paper from "@material-ui/core/Paper";
-import GridList from "@material-ui/core/GridList";
 import Checkbox from "@material-ui/core/Checkbox";
-
-import List from "../list";
 import Alert from "../../../../components/alert";
+import {
+  setMapObject,
+  showMyPosition,
+  hideMyPosition
+} from "../../../../components/map/actions";
+import AlertB from "../../alert_showRest";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.handleCloseAlert = this.handleCloseAlert.bind(this);
+    this.handleCloseAlertB = this.handleCloseAlertB.bind(this);
+
     this.state = {
       ShowOtherPlaces: false,
       showMyLocation: false,
       showhistorical: false,
       IsOutbound: false,
+      alertB: false,
       alertMessage: ""
     };
   }
   handleCloseAlert = () => {
     this.setState({ IsOutbound: false });
   };
+  handleCloseAlertB = () => {
+    this.setState({ alertB: false });
+    this.setState({ ShowOtherPlaces: false });
+  };
   handleshowhistorical = () => {
     const showAttractions = (show, map, maps) => {
       if (show) {
         this.props.ShowOrHide_H_A(true);
-        //this.props.dispatch(showAttraction_(map, maps));
+        this.props.dispatch(showAttraction_(map, maps));
       } else {
-        //this.props.dispatch(hideAttraction_(map, maps));
+        this.props.dispatch(setMapObject(this.props.mapObject));
+        this.props.dispatch(hideAttraction_(map, maps));
         this.props.ShowOrHide_H_A(false);
       }
     };
@@ -55,29 +65,44 @@ class App extends Component {
   handleShowOtherPlaces = () => {
     //this.props.handleMyLocation(null, null, data.key);
     if (this.state.ShowOtherPlaces) {
+      //  this.setState({ alertB: false });
+
       this.setState({ ShowOtherPlaces: false });
       console.log(this.state.ShowOtherPlaces);
       this.props.hideBusinesses();
     } else {
+      //  this.setState({ alertB: true });
+
       this.setState({ ShowOtherPlaces: true });
       console.log(this.state.ShowOtherPlaces);
       this.props.showBusinesses();
     }
   };
   handleMyLocation = (e, data) => {
-    const openAlert = message => {
+    const isNotBound = message => {
       this.setState({ alertMessage: message });
       this.setState({ IsOutbound: true }); //alert("You are not inbound");
       this.setState({ showMyLocation: false }); //Checkbox
       this.props.zoomOut();
     };
-
-    this.props.showMyLocation(function(isInbound, message) {
+    const isInBound = marker => {
+      if (this.state.showMyLocation) {
+        // this.props.removeMarker(marker);
+        this.props.dispatch(hideMyPosition(marker, this.props.mapObject));
+        this.props.zoomOut();
+        this.setState({ showMyLocation: false });
+      } else {
+        this.props.dispatch(showMyPosition(marker, this.props.mapObject));
+        this.setState({ showMyLocation: true });
+      }
+    };
+    this.props.showMyLocation(function(isInbound, message, marker) {
       if (!isInbound) {
-        openAlert(message);
+        isNotBound(message);
+      } else {
+        isInBound(marker);
       }
     });
-    this.setState({ showMyLocation: true });
   };
 
   render() {
@@ -134,6 +159,11 @@ class App extends Component {
             message={this.state.alertMessage}
             explanations={" "}
           />
+          <AlertB
+            open={this.state.alertB}
+            CloseIt={this.handleCloseAlertB}
+            title={"Franco Trail L-A"}
+          />
         </Paper>
       </div>
     );
@@ -142,7 +172,6 @@ class App extends Component {
 const mapStateToProps = state => {
   const { mapConfig } = state; // the state object comes from Redux store
   const { mapConfig_Desktop } = state; // the state object comes from Redux store
-
   return {
     zoomOut: mapConfig.zoomOut,
     clickOnMarker: mapConfig.clickOnMarker,
@@ -150,7 +179,9 @@ const mapStateToProps = state => {
     hideBusinesses: mapConfig.hideBusinesses,
     ShowOrHide_H_A: mapConfig.ShowOrHide_H_A,
     showMyLocation: mapConfig.showMyLocation,
+    removeMarker: mapConfig.removeMarker,
     getMapObjects: mapConfig.getMapObjects,
+    mapObject: mapConfig.mapObject,
     viewConfig: mapConfig_Desktop
   };
 };

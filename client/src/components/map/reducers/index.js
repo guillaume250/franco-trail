@@ -11,6 +11,26 @@ function mapConfig(state = mapConfigs, action) {
       mapsObject: action.mapsObject
     });
     return updatedState;
+  } else if (action.type === "HIDE_MY_POSITION") {
+    const { marker, map } = action.payload;
+    console.log(action.payload);
+    marker.setPosition(null);
+    marker.setMap(null);
+    const updatedState = Object.assign({}, state, {
+      mapObject: map,
+      MyPositionMarker: marker
+    });
+    console.log(updatedState);
+    return updatedState;
+  } else if (action.type === "SHOW_MY_POSITION") {
+    const { marker, map } = action.payload;
+    marker.setMap(map);
+    map.setZoom(17);
+    map.panTo(marker.getPosition());
+    const updatedState = Object.assign({}, state, {
+      MyPositionMarker: marker
+    });
+    return updatedState;
   } else {
     return state;
   }

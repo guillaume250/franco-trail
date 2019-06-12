@@ -1,5 +1,4 @@
 import React from "react";
-import { Col } from "react-simple-flex-grid";
 import SmoothScroll from "smooth-scroll";
 import "animate.css";
 import logo from "../../../resources/header_images/f01.png";
@@ -7,7 +6,7 @@ import arrowDown from "./arrow-down.png";
 import "./style.css";
 class App extends React.Component {
   componentDidMount() {
-    const scroll = new SmoothScroll('a[href*="#"]', {
+    new SmoothScroll('a[href*="#"]', {
       speed: 300,
       easing: "easeInOutCubic"
     });

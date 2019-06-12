@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-simple-flex-grid"; import "react-simple-flex-grid/lib/main.css";
+import { Row, Col } from "react-simple-flex-grid";
+import "react-simple-flex-grid/lib/main.css";
 import "react-simple-flex-grid/lib/main.css";
 import { connect } from "react-redux";
-import { showAttraction_, hideAttraction_ } from "./actions";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import InputLabel from "@material-ui/core/InputLabel";
-import Switch from "@material-ui/core/Switch";
 import Paper from "@material-ui/core/Paper";
 import GridList from "@material-ui/core/GridList";
-import Checkbox from "@material-ui/core/Checkbox";
 import MapControlButtons from "./mapControls";
 import List from "./list";
 import Alert from "../../../components/alert";
@@ -141,7 +138,7 @@ const styles = {
     marginBottom: "10px",
     padding: "35px",
     color: "white",
-    fontSize: 32,
+    fontSize: "1.8vw",
     fontWeight: 400,
     fontFamily: "'Pacifico', cursive",
     textDecoration: "underline"

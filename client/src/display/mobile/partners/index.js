@@ -18,7 +18,7 @@ const Partners_Logo = [
 class SimpleAppBar extends React.Component {
   render() {
     return (
-      <Col span={12} style={{ padding: "20px" }}>
+      <Col span={12} style={{ paddingTop: "20px" }}>
         <Row className="PartnersTitleContainer">
           <p className="PartnersTitle">Our Partners</p>
         </Row>
