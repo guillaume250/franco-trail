@@ -36,6 +36,7 @@ class App extends Component {
       } else {
         //this.props.dispatch(hideAttraction_(map, maps));
         this.props.ShowOrHide_H_A(false);
+        window.location.reload();
       }
     };
 
@@ -76,6 +77,7 @@ class App extends Component {
         this.props.dispatch(hideMyPosition(marker, this.props.mapObject));
         this.props.zoomOut();
         this.setState({ showMyLocation: false });
+        window.location.reload();
       } else {
         this.props.dispatch(showMyPosition(marker, this.props.mapObject));
         this.setState({ showMyLocation: true });

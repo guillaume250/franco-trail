@@ -8,72 +8,18 @@ import Paper from "@material-ui/core/Paper";
 import GridList from "@material-ui/core/GridList";
 import MapControlButtons from "./mapControls";
 import List from "./list";
-import Alert from "../../../components/alert";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleCloseAlert = this.handleCloseAlert.bind(this);
-    this.state = {
-      ShowOtherPlaces: false,
-      showMyLocation: false,
-      showhistorical: false,
-      IsOutbound: false
-    };
+    this.refreshMap = this.refreshMap.bind(this);
+    this.state = { mapRefresher: 0 };
   }
-  handleCloseAlert = () => {
-    this.setState({ IsOutbound: false });
+  refreshMap = () => {
+    this.props.refreshIt();
+    this.setState({ mapRefresher: this.state.mapRefresher + 1 });
+    console.log("mapRefresher II: " + this.state.mapRefresher);
   };
-  handleshowhistorical = () => {
-    const showAttractions = (show, map, maps) => {
-      if (show) {
-        this.props.ShowOrHide_H_A(true);
-        //this.props.dispatch(showAttraction_(map, maps));
-      } else {
-        //this.props.dispatch(hideAttraction_(map, maps));
-        this.props.ShowOrHide_H_A(false);
-      }
-    };
-
-    if (this.state.showhistorical) {
-      this.props.getMapObjects(function(map, maps) {
-        showAttractions(false, map, maps);
-      });
-      this.setState({ showhistorical: false });
-    } else {
-      this.props.getMapObjects(function(map, maps) {
-        showAttractions(true, map, maps);
-      });
-      this.setState({ showhistorical: true });
-    }
-  };
-  handleShowOtherPlaces = () => {
-    //this.props.handleMyLocation(null, null, data.key);
-    if (this.state.ShowOtherPlaces) {
-      this.setState({ ShowOtherPlaces: false });
-      console.log(this.state.ShowOtherPlaces);
-      this.props.hideBusinesses();
-    } else {
-      this.setState({ ShowOtherPlaces: true });
-      console.log(this.state.ShowOtherPlaces);
-      this.props.showBusinesses();
-    }
-  };
-  handleMyLocation = (e, data) => {
-    const openAlert = () => {
-      this.setState({ IsOutbound: true }); //alert("You are not inbound");
-      this.setState({ showMyLocation: false });
-      this.props.zoomOut();
-    };
-
-    this.props.showMyLocation(function(isInbound) {
-      if (!isInbound) {
-        openAlert();
-      }
-    });
-    this.setState({ showMyLocation: true });
-  };
-
   render() {
     return (
       <div style={styles.SideMenu}>
@@ -88,17 +34,8 @@ class App extends Component {
               </GridList>
             </Paper>
           </Row>
-          <MapControlButtons />
+          <MapControlButtons refreshIt={this.refreshMap} />
         </Col>
-        <Alert
-          open={this.state.IsOutbound}
-          CloseIt={this.handleCloseAlert}
-          title={"User not on the trail"}
-          message={"You are not in Franco Trail Area"}
-          explanations={
-            "You need to be on the trail (or closeby) to view your location"
-          }
-        />
       </div>
     );
   }

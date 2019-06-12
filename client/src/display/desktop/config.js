@@ -6,6 +6,7 @@ const mapConfig = {
     lng: -70.2230216
   },
   zoom: 15.6,
+  setStyle: function(map) {},
   mapStyle: {
     styles: standard1.default
     // minZoom: 14, // 0 is the world map

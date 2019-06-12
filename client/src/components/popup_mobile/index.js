@@ -52,8 +52,10 @@ class Popup extends React.Component {
                 ))}
               </div>
 
-              <div className="popContent">{this.props.data.longDesc}</div>
-              <div className="popContactField">
+              <div className="popContent">
+                {this.props.data.longDesc}
+                <br />
+                <br />
                 <p>
                   {this.props.data.contactField.type}
                   {": "}

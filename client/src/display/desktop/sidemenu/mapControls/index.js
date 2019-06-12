@@ -19,6 +19,7 @@ import AlertB from "../../alert_showRest";
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.handleCloseAlert = this.handleCloseAlert.bind(this);
     this.handleCloseAlertB = this.handleCloseAlertB.bind(this);
 
@@ -47,6 +48,8 @@ class App extends Component {
         this.props.dispatch(setMapObject(this.props.mapObject));
         this.props.dispatch(hideAttraction_(map, maps));
         this.props.ShowOrHide_H_A(false);
+        this.props.refreshIt();
+        window.location.reload();
       }
     };
 
@@ -88,9 +91,12 @@ class App extends Component {
     const isInBound = marker => {
       if (this.state.showMyLocation) {
         // this.props.removeMarker(marker);
-        this.props.dispatch(hideMyPosition(marker, this.props.mapObject));
+        this.props.dispatch(
+          hideMyPosition(marker, this.props.mapObject, this.props.mapsObject)
+        );
         this.props.zoomOut();
         this.setState({ showMyLocation: false });
+        window.location.reload();
       } else {
         this.props.dispatch(showMyPosition(marker, this.props.mapObject));
         this.setState({ showMyLocation: true });
@@ -182,6 +188,7 @@ const mapStateToProps = state => {
     removeMarker: mapConfig.removeMarker,
     getMapObjects: mapConfig.getMapObjects,
     mapObject: mapConfig.mapObject,
+    mapsObject: mapConfig.mapsObject,
     viewConfig: mapConfig_Desktop
   };
 };

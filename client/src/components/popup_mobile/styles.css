@@ -1,0 +1,21 @@
+.popContentContainer {
+  display: flex;
+  flex-direction: column;
+}
+.popImagesContainer {
+  display: flex;
+  overflow-x: scroll;
+  height: 50vh;
+}
+.popUpImage {
+  margin: 20px;
+  max-height: 50vh;
+}
+
+.popContent {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  height: 20vh;
+}

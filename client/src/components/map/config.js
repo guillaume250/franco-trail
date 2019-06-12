@@ -157,6 +157,8 @@ const mapConfig = {
       }
     }
     function showPosition(position) {
+      //console.log(process.env.NODE_ENV);
+
       const MyPosition = {
         lat: position.coords.latitude,
         lng: position.coords.longitude

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import Header from "../../components/header";
-import Carousel from "../../components/carousel";
+import Carousel from "../../components/carousel_mobile";
 import Map from "../../components/map";
 import MapControlButtons from "./mapControls";
 
