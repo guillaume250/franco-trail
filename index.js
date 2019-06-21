@@ -8,6 +8,8 @@ app.use("/", express.static(__dirname + "/client/build/"));
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
-
+app.get("/clearmap", function(req, res) {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Franco Trail is runnig on port ${PORT}`));

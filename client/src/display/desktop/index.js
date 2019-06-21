@@ -8,7 +8,7 @@ function AppRouter() {
   return (
     <Router>
       <Route path="/" exact component={MainApp} />
-      <Route path="/clearmap/" component={ClearMap} />
+      <Route path="/clearmap" component={ClearMap} />
     </Router>
   );
 }
